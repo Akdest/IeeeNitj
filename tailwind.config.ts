@@ -12,7 +12,20 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-300%)" }, // Replace with `(number of images - 1) * 100`
+        },
+      },
+      animation: {
+        slide: "slide 20s linear infinite",
+      },
+
+      textShadow: {
+        'custom': '2px 2px 4px rgba(0, 0, 0, 0.7)', // Example custom shadow
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-textshadow")],
 } satisfies Config;
