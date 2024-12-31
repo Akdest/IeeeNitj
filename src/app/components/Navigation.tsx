@@ -1,16 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { styleText } from "util";
+// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function NavigationBar({ login = false }) {
-  const [log, setLog] = useState(login ? "Log Out" : "Log In");
+  const [log, setLog] = useState("Log In");
   const [hamburger, setHamburger] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState(null);
-  const toggleSubMenu = (menu) => {
-    setActiveSubMenu((prevMenu) => (prevMenu === menu ? null : menu));
-  };
+  const [subMenuCom, setSubMenuCom] = useState(false);
+  const [subMenuNews, setSubMenuNews] = useState(false);
+
+  useEffect(() => {
+    if (login) {
+      setLog("Log Out");
+    } else {
+      setLog("Log In");
+    }
+  }, [login]);
 
   return (
     <div className="relative w-full z-50" style={{ fontFamily: "Michroma" }}>
@@ -61,89 +69,114 @@ export default function NavigationBar({ login = false }) {
           </button>
         </div>
         <div className="grid grid-cols-2 gap-10">
-          <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB]">
-            {[
-              { name: "Home", link: "#" },
-              { name: "Events", link: "#" },
-              { name: "News", subMenu: true },
-              { name: "Gallery", link: "#" },
-              { name: "Committee", subMenu: true },
-              { name: "Contacts", link: "#" },
-              { name: log, link: "#" },
-            ].map(({ name, link, subMenu }, idx) => (
-              <li key={idx}>
-                {subMenu ? (
-                  <p
-                    className={`font-normal text-4xl ml-10 cursor-pointer ${
-                      activeSubMenu === name ? "text-white" : "hover:text-white"
-                    }`}
-                    onClick={() => toggleSubMenu(name)}
-                  >
-                    {name}{" "}
-                    <FontAwesomeIcon
-                      icon={faArrowRightToBracket}
-                      className="w-5 h-5 mb-1"
-                    />
-                  </p>
-                ) : (
-                  <a
-                    href={link}
-                    className="font-normal text-4xl ml-10 hover:text-white"
-                  >
-                    {name}
-                  </a>
-                )}
-              </li>
-            ))}
+          <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] overflow-auto">
+            <li>
+              <a
+                href=""
+                className="font-normal text-4xl ml-[40px] hover:text-white"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                className="font-normal text-4xl ml-[40px] hover:text-white"
+              >
+                Events
+              </a>
+            </li>
+            <li>
+              <p
+                className={`font-normal text-4xl ml-[40px] cursor-pointer ${
+                  subMenuNews ? "text-white" : "hover:text-white text-[#94C4FB]"
+                }`}
+                onClick={() => {
+                  setSubMenuNews(!subMenuNews);
+                  setSubMenuCom(false);
+                }}
+              >
+                News <FontAwesomeIcon icon={faArrowRightToBracket} className="w-5 h-5 mb-1"/>
+              </p>
+            </li>
+            <li>
+              <a
+                href=""
+                className="font-normal text-4xl ml-[40px] hover:text-white"
+              >
+                Gallery
+              </a>
+            </li>
+            <li>
+              <p
+                className={`committee font-normal text-4xl ml-[40px] cursor-pointer ${
+                  subMenuCom ? "text-white" : "hover:text-white text-[#94C4FB]"
+                }`}
+                onClick={() => {
+                  setSubMenuCom(!subMenuCom);
+                  setSubMenuNews(false);
+                }}
+              >
+                Committee <FontAwesomeIcon icon={faArrowRightToBracket} className="w-5 h-5 mb-1"/>
+              </p>
+            </li>
+            <li>
+              <a
+                href=""
+                className="font-normal text-4xl ml-[40px] hover:text-white"
+              >
+                Contacts
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                className="font-normal text-4xl ml-[40px] hover:text-white"
+              >
+                {log}
+              </a>
+            </li>
           </ul>
           <ul
-            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] ${
-              activeSubMenu ? "opacity-100" : "opacity-0"
-            } transition-all ease-in-out duration-500`}
+            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] ${(subMenuCom||subMenuNews)?"opacity-1":"opacity-0"} transition-all ease-in-out duration-500`}
           >
             <div
               className={`transition-all duration-500 ease-in-out ${
-                activeSubMenu === "Committee"
+                subMenuCom
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-full"
               }
           `}
             >
-              {[
-                { name: "Secretary", link: "#" },
-                { name: "Student", link: "#" },
-              ].map(({ name, link }) => (
-                <li>
-                  <a
-                    href={link}
-                    className="font-normal text-2xl hover:text-white"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="" className="font-normal text-2xl hover:text-white">
+                  Secretary
+                </a>
+              </li>
+              <li>
+                <a href="" className="font-normal text-2xl hover:text-white">
+                  Student
+                </a>
+              </li>
             </div>
             <div
               className={`transition-all duration-500 ease-in-out ${
-                activeSubMenu === "News"
+                subMenuNews
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-full"
               }
           `}
             >
-              {[
-                { name: "Good News", link: "#" },
-                { name: "Bad News", link: "#" },
-              ].map(({ name, link }) => (
-                <li>
-                  <a
-                    href={link}
-                    className="font-normal text-2xl hover:text-white"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="" className="font-normal text-2xl hover:text-white">
+                  Good News
+                </a>
+              </li>
+              <li>
+                <a href="" className="font-normal text-2xl hover:text-white">
+                  Bad News
+                </a>
+              </li>
             </div>
           </ul>
         </div>
