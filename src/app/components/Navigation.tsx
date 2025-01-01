@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavigationBar({ login = false }) {
-  const [log, setLog] = useState(login ? "Log Out" : "Log In");
+  const log = useState(login ? "Log Out" : "Log In");
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const toggleSubMenu = (menu) => {
@@ -112,8 +112,8 @@ export default function NavigationBar({ login = false }) {
               {[
                 { name: "Secretary", link: "#" },
                 { name: "Student", link: "#" },
-              ].map(({ name, link }) => (
-                <li>
+              ].map(({ name, link },idx) => (
+                <li key={idx}>
                   <a
                     href={link}
                     className="font-normal text-2xl hover:text-white"
@@ -134,8 +134,8 @@ export default function NavigationBar({ login = false }) {
               {[
                 { name: "Good News", link: "#" },
                 { name: "Bad News", link: "#" },
-              ].map(({ name, link }) => (
-                <li>
+              ].map(({ name, link },idx) => (
+                <li key={idx}>
                   <a
                     href={link}
                     className="font-normal text-2xl hover:text-white"
