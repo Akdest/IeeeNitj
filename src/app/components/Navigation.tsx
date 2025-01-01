@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavigationBar({ login = false }) {
-  const log = useState(login ? "Log Out" : "Log In");
+  const log = login ? "Log Out" : "Log In";
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
-  const toggleSubMenu = (menu) => {
+  const toggleSubMenu = (menu = null) => {
     setActiveSubMenu((prevMenu) => (prevMenu === menu ? null : menu));
   };
 
