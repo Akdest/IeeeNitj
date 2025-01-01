@@ -8,7 +8,7 @@ export default function NavigationBar({ login = false }) {
   const log = login ? "Log Out" : "Log In";
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
-  const toggleSubMenu = (menu = null) => {
+  const toggleSubMenu = (menu) => {
     setActiveSubMenu((prevMenu) => (prevMenu === menu ? null : menu));
   };
 
