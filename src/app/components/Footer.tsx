@@ -16,13 +16,13 @@ export default function Footer() {
         style={{ fontFamily: "Michroma" }}
       >
         <div
-          className="footer1 relative w-full h-[601px] flex-shrink-0 flex flex-col gap-5 justify-center items-center"
+          className="footer1 relative w-full sm:h-[601px] h-[400px] flex-shrink-0 flex flex-col gap-5 justify-center items-center"
           style={{ background: "rgba(255, 255, 255, 0.80)" }}
         >
-          <div className="text-black w-fit h-[40px] border-2 border-black flex items-center justify-center pr-5 pl-5 text-2xl">
+          <div className="text-black w-fit h-[40px] border-2 border-black flex items-center justify-center pr-5 pl-5 sm:text-2xl text-sm font-semibold">
             IEEE NITJ STUDENT CHAPTER
           </div>
-          <div className="text-black text-sm">
+          <div className="text-black sm:text-sm text-xs">
             FUELING IDEAS, FOSTERING GROWTH!
           </div>
           <button className="w-[150px] h-[30px] pt-5 pb-5 flex items-center justify-center rounded-[30px] bg-[#4277EA] text-[#ABC6F9] text-sm">
@@ -145,7 +145,7 @@ export default function Footer() {
         </div>
 
         <div
-          className="footer2 w-full h-[428px] grid grid-cols-3 gap-5 p-10 "
+          className="footer2 w-full sm:h-[428px] grid grid-rows-3 gap-16 sm:grid-cols-3 lg:gap-16 sm:gap-5 p-10 "
           style={{ opacity: "0.65", background: "rgba(1, 12, 38, 0.92)", fontFamily:"Roboto" }}
         >
           <div className="section1 flex flex-col gap-10">
@@ -177,11 +177,11 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="section2 flex flex-col gap-10 ">
+          <div className="section2 flex flex-col gap-10 sm:mt-0 -mt-8">
             <p className="font-bold text-2xl">Question Us</p>
-            <form action="" className="flex gap-20">
+            <form action="" className="flex xl:gap-20 lg:gap-10 sm:gap-5 gap-16">
               <div className="flex flex-col gap-5">
-                <label htmlFor="name">First Name</label>
+                <label htmlFor="name">Name</label>
                 <label htmlFor="company">Company</label>
                 <label htmlFor="position">Position</label>
                 <label htmlFor="phone">Phone</label>
@@ -189,7 +189,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col gap-5">
                 <input type="text" name="" id="name" className="bg-transparent border-b-2 border-[#9A9EA5]" placeholder="Enter your Name"/>
-                <input type="text" name="" id="company" className="bg-transparent border-b-2 border-[#9A9EA5]" placeholder="Comapny Name"/>
+                <input type="text" name="" id="company" className="bg-transparent border-b-2 border-[#9A9EA5]" placeholder="Company Name"/>
                 <select name="" id="position" className="bg-transparent border-b-2 border-[#9A9EA5]">
                   <option value="CEO" className="text-black">CEO</option>
                   <option value="Designer" className="text-black">Designer</option>
@@ -199,32 +199,32 @@ export default function Footer() {
                 <input type="email" name="" id="email" className="bg-transparent border-b-2 border-[#9A9EA5]" placeholder="Enter your Email"/>
               </div>
             </form>
-            <button className="w-3/4 bg-white p-3 rounded-xl text-black flex justify-center flex-center">
+            <button className="w-3/4 bg-white p-3 rounded-xl text-black flex justify-center flex-center m-auto">
               Get Started
             </button>
           </div>
-          <div className="section3 flex flex-col gap-10">
+          <div className="section3 flex flex-col gap-10 lg:ml-0 md:ml-14">
             <p className="font-bold text-2xl">QUICK LINKS</p>
             <div className="flex flex-col gap-5">
               <a href="" className="flex relative w-1/2">
                 About Us
-                <img src="./arrow.svg" alt="" className="absolute right-0"/>
+                <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
               <a href="" className="flex relative w-1/2">
                 Careers
-                <img src="./arrow.svg" alt="" className="absolute right-0"/>
+                <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
               <a href="" className="flex relative w-1/2">
                 FAQs
-                <img src="./arrow.svg" alt="" className="absolute right-0"/>
+                <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
               <a href="" className="flex relative w-1/2">
                 Teams
-                <img src="./arrow.svg" alt="" className="absolute right-0"/>
+                <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
               <a href="" className="flex relative w-1/2">
                 Contact Us
-                <img src="./arrow.svg" alt="" className="absolute right-0"/>
+                <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
             </div>
           </div>
