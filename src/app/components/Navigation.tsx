@@ -39,7 +39,7 @@ export default function NavigationBar({ login = false }) {
         </div>
       </div>
       <div
-        className={`menuBar overflow-auto fixed top-0 pt-16 pb-10 pr-20 pl-5 h-screen w-full grid grid-cols-2 transition-all duration-500 ease-in-out ${
+        className={`menuBar overflow-auto fixed top-0 pt-16 pb-10 pr-20 pl-5 h-screen w-full grid sm:grid-cols-2 grid-cols-1 gap-20 transition-all duration-500 ease-in-out ${
           hamburger ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         }`}
         style={{
@@ -60,8 +60,8 @@ export default function NavigationBar({ login = false }) {
             <img src="/cross.png" alt="" className="w-11/12 h-full" />
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-10">
-          <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB]">
+        <div className="sm:grid grid-cols-2 xl:gap-10 lg:gap-40 sm:gap-28 hidden">
+          <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] xl:w-96 lg:w-72 sm:w-48 w-96">
             {[
               { name: "Home", link: "#" },
               { name: "Events", link: "#" },
@@ -74,7 +74,7 @@ export default function NavigationBar({ login = false }) {
               <li key={idx}>
                 {subMenu ? (
                   <p
-                    className={`font-normal text-4xl ml-10 cursor-pointer ${
+                    className={`font-normal xl:text-4xl lg:text-3xl sm:text-lg text-2xl ml-10 cursor-pointer ${
                       activeSubMenu === name ? "text-white" : "hover:text-white"
                     }`}
                     onClick={() => toggleSubMenu(name)}
@@ -82,13 +82,13 @@ export default function NavigationBar({ login = false }) {
                     {name}{" "}
                     <FontAwesomeIcon
                       icon={faArrowRightToBracket}
-                      className="w-5 h-5 mb-1"
+                      className="lg:w-5 lg:h-5 mb-1 w-3 h-3"
                     />
                   </p>
                 ) : (
                   <a
                     href={link}
-                    className="font-normal text-4xl ml-10 hover:text-white"
+                    className="font-normal xl:text-4xl lg:text-3xl sm:text-lg text-2xl ml-10 hover:text-white"
                   >
                     {name}
                   </a>
@@ -97,7 +97,7 @@ export default function NavigationBar({ login = false }) {
             ))}
           </ul>
           <ul
-            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] ${
+            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] xl:w-72 lg:w-48 sm:w-36 ${
               activeSubMenu ? "opacity-100" : "opacity-0"
             } transition-all ease-in-out duration-500`}
           >
@@ -116,7 +116,7 @@ export default function NavigationBar({ login = false }) {
                 <li key={idx}>
                   <a
                     href={link}
-                    className="font-normal text-2xl hover:text-white"
+                    className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
                   >
                     {name}
                   </a>
@@ -138,7 +138,7 @@ export default function NavigationBar({ login = false }) {
                 <li key={idx}>
                   <a
                     href={link}
-                    className="font-normal text-2xl hover:text-white"
+                    className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
                   >
                     {name}
                   </a>
@@ -147,23 +147,80 @@ export default function NavigationBar({ login = false }) {
             </div>
           </ul>
         </div>
-        <div className="relative animate-vibrate">
+        <div className="sm:hidden h-screen overflow-y-auto overflow-x-hidden">
+          <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] xl:w-96 lg:w-72 sm:w-48 w-96">
+            {[
+              { name: "Home", link: "#" },
+              { name: "Events", link: "#" },
+              { name: "News", subMenu: true, subValues:[
+                { nameSub: "Good News", linkSub: "#" },
+                { nameSub: "Bad News", link: "#" },
+              ] },
+              { name: "Gallery", link: "#" },
+              { name: "Committee", subMenu: true, subValues:[
+                { nameSub: "Secretary", linkSub: "#" },
+                { nameSub: "Student", linkSub: "#" },
+              ] },
+              { name: "Contacts", link: "#" },
+              { name: log, link: "#" },
+            ].map(({ name, link, subMenu, subValues }, idx) => (
+              <li key={idx}>
+                {subMenu ? (
+                  <div
+                    className={`font-normal xl:text-4xl lg:text-3xl sm:text-lg text-2xl ml-10 cursor-pointer ${
+                      activeSubMenu === name ? "text-white" : "hover:text-white"
+                    }`}
+                    onClick={() => toggleSubMenu(name)}
+                  >
+                    {name}{" "}
+                    <FontAwesomeIcon
+                      icon={faArrowRightToBracket}
+                      className="lg:w-5 lg:h-5 mb-1 w-3 h-3"
+                    />
+                    <ul
+                    className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] xl:w-72 lg:w-48 sm:w-36 w-fit ${
+                      activeSubMenu === name? "h-full p-5 opacity-100 mt-5" : "h-0 p-0 opacity-0 mt-0"
+                    } transition-all ease-in-out duration-500`}
+                    >{subValues.map(({ nameSub, linkSub },idx) => (
+                      <li key={idx} className={`${activeSubMenu === name?"flex":"hidden"}`}>
+                        <a
+                          href={linkSub}
+                          className={`font-normal xl:text-2xl lg:text-lg sm:text-sm text-lg hover:text-white`}
+                        >
+                          {nameSub}
+                        </a>
+                      </li>
+                    ))}</ul>
+                  </div>
+                ) : (
+                  <a
+                    href={link}
+                    className="font-normal xl:text-4xl lg:text-3xl sm:text-lg text-2xl ml-10 hover:text-white"
+                  >
+                    {name}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="relative animate-vibrate sm:flex hidden">
           {/* <iframe src="https://lottie.host/embed/26d85033-ae9a-4ed2-a580-16f952da2294/DXcbJlNFtf.lottie" className="w-2/5 h-2/5 absolute bottom-40"></iframe>
           <iframe src="https://lottie.host/embed/26d85033-ae9a-4ed2-a580-16f952da2294/DXcbJlNFtf.lottie" className="w-1/3 h-1/3 absolute top-0 right-1/3"></iframe> */}
 
-          <iframe
-            src="https://lottie.host/embed/26d85033-ae9a-4ed2-a580-16f952da2294/DXcbJlNFtf.lottie"
-            className="w-[300px] h-[300px] absolute bottom-[235px] right-[190px] -z-30"
-          ></iframe>
-          <div className="w-[425px] h-[300px] border border-[#94C4FB] -z-50 absolute bottom-[220px] right-[130px] rounded-xl bg-[#94c4fb2f]"></div>
-          <div className="flex flex-col items-center absolute bottom-[200px] right-[175px] w-fit text-[#94C4FB] bg-[#0b1126] pt-3 pb-3 p-5 rounded-xl border border-black">
-            <h1
-              className="text-xl inline-block border-r-2 border-[#94C4FB] whitespace-nowrap overflow-hidden w-[10ch] animate-typing font-extralight drop-shadow-lg "
-              style={{ textShadow: "0 0px 2px rgba(255, 255, 255, 0.5)" }}
-            >
-              Welcome to IEEE NITJ
-            </h1>
-          </div>
+            <iframe
+              src="https://lottie.host/embed/26d85033-ae9a-4ed2-a580-16f952da2294/DXcbJlNFtf.lottie"
+              className="xl:w-[300px] xl:h-[300px] lg:w-[350px] lg:h-[300px] sm:w-[300px] sm:h-[250px] absolute xl:bottom-[235px] xl:right-[190px] bottom-[180px] lg:right-[65px] sm:right-[0px] -z-30"
+            ></iframe>
+            <div className="xl:w-[425px] xl:h-[300px] lg:w-[350px] lg:h-[300px] sm:w-[315px] sm:h-[250px] border border-[#94C4FB] -z-50 absolute xl:bottom-[220px] xl:right-[130px] bottom-[170px] lg:right-[65px] sm:right-[0px] rounded-xl bg-[#94c4fb2f]"></div>
+            <div className="flex flex-col items-center absolute xl:bottom-[200px] xl:right-[175px] bottom-[150px] lg:right-[100px] sm:right-[35px] w-fit text-[#94C4FB] bg-[#0b1126] pt-3 pb-3 p-5 rounded-xl border border-black">
+              <h1
+                className="xl:text-xl lg:text-base sm:text-sm inline-block border-r-2 border-[#94C4FB] whitespace-nowrap overflow-hidden w-[10ch] animate-typing font-extralight drop-shadow-lg "
+                style={{ textShadow: "0 0px 2px rgba(255, 255, 255, 0.5)" }}
+              >
+                Welcome to IEEE NITJ
+              </h1>
+            </div>
         </div>
       </div>
     </div>
