@@ -1,16 +1,18 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import {Michroma} from 'next/font/google';
-
-const michroma = Michroma({ weight: ['400'], subsets: ['latin'] });
-
-const image1 = '/image1.jpeg' as unknown as StaticImageData;
-const image2 = '/image2.jpeg' as unknown as StaticImageData;
-const image3 = '/image3.jpeg' as unknown as StaticImageData;
-const image4 = '/image4.jpeg' as unknown as StaticImageData;
+import { Michroma } from "next/font/google";
 import { StaticImageData } from "next/image";
+
+const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
+
+const image1 = "/image1.jpeg" as unknown as StaticImageData;
+const image2 = "/image2.jpeg" as unknown as StaticImageData;
+const image3 = "/image3.jpeg" as unknown as StaticImageData;
+const image4 = "/image4.jpeg" as unknown as StaticImageData;
+
+const leftArrow = "/left_arrow.png"; // Replace with the path to your left arrow image
+const rightArrow = "/right_arrow.png"; // Replace with the path to your right arrow image
 
 const images: StaticImageData[] = [image1, image2, image3, image4];
 
@@ -39,24 +41,36 @@ const Gallery: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative h-screen" style={{
-      backgroundImage: "url('/main.svg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}>
-      <div className="absolute top-6 left-4 right-4 bottom-6 md:top-12 md:left-12 md:right-12 md:bottom-12 flex justify-center items-center rounded-[20px] md:rounded-[40px]" style={{backgroundColor: "#374E72"}}>
+    <div
+      className="relative h-screen"
+      style={{
+        backgroundImage: "url('/main.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div
+        className="absolute top-6 left-4 right-4 bottom-6 md:top-12 md:left-12 md:right-12 md:bottom-12 flex justify-center items-center rounded-[20px] md:rounded-[40px]"
+        style={{ backgroundColor: "#374E72" }}
+      >
         <div className="p-2 md:p-4 shadow-lg">
-          <div className="absolute top-4 left-4 right-4 bottom-4 md:top-9 md:left-9 md:right-9 md:bottom-9 overflow-hidden rounded-[20px] md:rounded-[40px]" style={{backgroundColor: "#E0F4FF"}}>
+          <div
+            className="absolute top-4 left-4 right-4 bottom-4 md:top-9 md:left-9 md:right-9 md:bottom-9 overflow-hidden rounded-[20px] md:rounded-[40px]"
+            style={{ backgroundColor: "#E0F4FF" }}
+          >
             <div>
               <div className="absolute top-8 md:top-14 left-0 right-0 text-center">
-                <h1 className={`text-center font-bold text-2xl md:text-4xl text-shadow-custom ${michroma.className}`}>
+                <h1
+                  className={`text-center font-bold text-2xl md:text-4xl text-shadow-custom ${michroma.className}`}
+                >
                   GALLERY SECTION
                 </h1>
                 <div className="flex justify-between items-center mt-10 md:mt-14">
                   {/* Left Arrow */}
-                  <FaArrowAltCircleLeft
-                    className="text-2xl md:text-4xl ml-2 md:ml-5 cursor-pointer"
-                    style={{color: "#A9C2F0"}}
+                  <img
+                    src={leftArrow}
+                    alt="Left Arrow"
+                    className="w-6 md:w-10 cursor-pointer ml-3"
                     onClick={prevSlide}
                   />
 
@@ -89,9 +103,10 @@ const Gallery: React.FC = () => {
                   </div>
 
                   {/* Right Arrow */}
-                  <FaArrowAltCircleRight
-                    className="text-2xl md:text-4xl text-blue-300 mr-2 md:mr-5 cursor-pointer"
-                    style={{color: "#A9C2F0"}}
+                  <img
+                    src={rightArrow}
+                    alt="Right Arrow"
+                    className="w-6 md:w-10 cursor-pointer mr-3"
                     onClick={nextSlide}
                   />
                 </div>
