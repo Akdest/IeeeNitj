@@ -13,15 +13,26 @@ export default {
         foreground: "var(--foreground)",
       },
       keyframes: {
-        slide: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-300%)" }, // Replace with `(number of images - 1) * 100`
+        typing: {
+          '0%': { width: '0%' },
+          '80%': { width: '100%' }, 
+          '100%': { width: '100%' },
         },
+        blink: {
+          '0%, 100%': { borderColor: 'transparent' },
+          '50%': { borderColor: 'black' },
+        },
+        vibrate:{
+          '0%':{top:"0%"},
+          '50%':{top:"1%"},
+          '100%':{top:"0%"}
+        }
       },
       animation: {
-        slide: "slide 20s linear infinite",
+        typing: 'typing 4s steps(20, end) infinite',
+        blink: 'blink 0.5s step-end infinite',
+        vibrate:'vibrate 0.8s linear infinite'
       },
-
       textShadow: {
         'custom': '2px 2px 4px rgba(0, 0, 0, 0.7)', // Example custom shadow
       },
