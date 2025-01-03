@@ -63,7 +63,7 @@ const Herosection: React.FC = () => {
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
                   ELECTRONICS ENGINEERING
                 </h1>
-                <h1 className="text-lg md:text-2xl lg:text-4xl mt-4 md:mt-8 text-white drop-shadow-lg text-center font-semibold">
+                <h1 className="text-lg md:text-2xl lg:text-4xl mt-4 md:mt-8 text-white drop-shadow-lg text-center font-semibold hidden md:block">
                   STUDENT CHAPTER NIT JALANDHAR
                 </h1>
 
