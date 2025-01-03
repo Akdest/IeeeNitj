@@ -61,7 +61,7 @@ const Gallery: React.FC = () => {
             <div>
               <div className="absolute top-8 md:top-14 left-0 right-0 text-center">
                 <h1
-                  className={`text-center font-bold text-2xl md:text-4xl text-shadow-custom ${michroma.className}`}
+                  className={`text-center font-bold text-4xl my-14 md:my-0 text-shadow-custom ${michroma.className}`}
                 >
                   GALLERY SECTION
                 </h1>
@@ -70,30 +70,35 @@ const Gallery: React.FC = () => {
                   <img
                     src={leftArrow}
                     alt="Left Arrow"
-                    className="w-6 md:w-10 cursor-pointer ml-3"
+                    className="w-6 md:w-10 cursor-pointer ml-3 md:block"
                     onClick={prevSlide}
                   />
 
                   {/* Carousel Images */}
-                  <div className="flex space-x-8 md:space-x-28 items-center">
+                  <div className="flex md:space-x-28 items-center justify-center">
+                    {/* Div 1: Hidden on mobile */}
                     <div
-                      className="w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
+                      className="hidden md:block w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
                       style={{
                         backgroundImage: `url(${images[getImageIndex(-1)]})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                       }}
                     />
+                    
+                    {/* Div 2: Centered on mobile */}
                     <div
-                      className="w-40 h-52 md:w-72 md:h-80 bg-blue-300 rounded-[20px] md:rounded-[30px]"
+                      className="w-[250px] h-[450px] my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[20px] md:rounded-[30px]"
                       style={{
                         backgroundImage: `url(${images[getImageIndex(0)]})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                       }}
                     />
+
+                    {/* Div 3: Hidden on mobile */}
                     <div
-                      className="w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
+                      className="hidden md:block w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
                       style={{
                         backgroundImage: `url(${images[getImageIndex(1)]})`,
                         backgroundSize: "cover",
@@ -106,10 +111,11 @@ const Gallery: React.FC = () => {
                   <img
                     src={rightArrow}
                     alt="Right Arrow"
-                    className="w-6 md:w-10 cursor-pointer mr-3"
+                    className="w-6 md:w-10 cursor-pointer mr-3 md:block"
                     onClick={nextSlide}
                   />
                 </div>
+
 
                 {/* Dotted Navigation */}
                 <div className="absolute mt-6 md:mt-9 left-1/2 transform -translate-x-1/2 flex space-x-2">
