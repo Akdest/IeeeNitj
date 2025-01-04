@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { useState } from 'react';
 import {Michroma, Montserrat} from 'next/font/google'
 import { StaticImageData } from 'next/image';
 
@@ -21,7 +22,19 @@ interface EventCardProps {
   img: StaticImageData;
 }
 
+function checkVP() {
+  if(window.innerWidth < 800) return true;
+  return false;
+}
+
 export default function NewsEvents() {
+
+  const [mobileVP, setMobileVP] = useState(checkVP())
+
+  setInterval(()=>{
+    const cVP = checkVP()
+    if(mobileVP != cVP) setMobileVP(cVP)
+  },500)
 
   const Heading: React.FC<HeadingProps> = (props) => {
 
@@ -74,7 +87,7 @@ export default function NewsEvents() {
     }
 
     return (
-      <div style={{margin:"5px", height:"100%", width:"35%", boxSizing:"border-box"}}>
+      <div style={{margin:"5px", height:"100%", width:mobileVP?"95%":"35%", boxSizing:"border-box"}}>
         <Heading text='NEWS' />
 
         {/* Bubble Container */}
@@ -100,7 +113,7 @@ export default function NewsEvents() {
     const EventCard: React.FC<EventCardProps> = (props) => {
 
       const EventCardStyle:React.CSSProperties = {
-        backgroundColor:"#8DB5F1", borderRadius:"15px", width:"40%", height:"65%",
+        backgroundColor:"#8DB5F1", borderRadius:"15px", width:mobileVP?"95%":"40%", height:mobileVP?"40%":"65%",
         border:"2px solid #8CA9DF",
         boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
       }
@@ -144,11 +157,11 @@ export default function NewsEvents() {
     }
 
     return (
-      <div style={{margin:"5px", width:"65%", boxSizing:"border-box"}}>
+      <div style={{margin:"5px auto", width:mobileVP?"90%":"65%", height:"100%", boxSizing:"border-box"}}>
         <Heading text='UPCOMING EVENTS' />
 
         {/* Event Card List Div */}
-        <div style={{height:'85%', display:"flex", alignItems:"center", justifyContent:"space-evenly"}}>
+        <div style={{height:mobileVP?"80%":'85%', display:"flex", flexDirection:mobileVP?"column":"row", alignItems:"center", justifyContent:"space-evenly"}}>
           <EventCard img={demo} text={'lorem ipsum ieee'} />
           <EventCard img={demo} text={'lorem ipsum ieee'} />
         </div>
@@ -158,13 +171,22 @@ export default function NewsEvents() {
   }
 
   return (
-    <div style={{height:"100svh", width:"100svw",padding:"5vw"}}>
-      <div style={{background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", height:"100%", width:"100%", borderRadius:'30px', display:"flex"}}>
+    <div style={{height:(mobileVP?"200svh":"100svh"), width:"100%",padding:"5vw"}}>
+      <div style={{background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", height:mobileVP?"95svh":"100%", width:"100%", borderRadius:'30px', display:"flex"}}>
         
         <Events/>
-        <News/>
+        {
+          !mobileVP&&
+          <News/>
+        }
 
       </div>
+      {
+        mobileVP&&
+        <div style={{background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", height:"95svh",marginTop:"5svh", width:"100%", borderRadius:'30px', display:"flex"}}>
+          <News/>
+        </div>
+      }
     </div>
   )
 };
