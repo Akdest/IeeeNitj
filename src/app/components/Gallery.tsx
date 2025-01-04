@@ -11,8 +11,8 @@ const image2 = "/image2.jpeg" as unknown as StaticImageData;
 const image3 = "/image3.jpeg" as unknown as StaticImageData;
 const image4 = "/image4.jpeg" as unknown as StaticImageData;
 
-const leftArrow = "/left_arrow.png"; // Replace with the path to your left arrow image
-const rightArrow = "/right_arrow.png"; // Replace with the path to your right arrow image
+const leftArrow = "/left_arrow.png";
+const rightArrow = "/right_arrow.png";
 
 const images: StaticImageData[] = [image1, image2, image3, image4];
 
@@ -88,7 +88,7 @@ const Gallery: React.FC = () => {
                     
                     {/* Div 2: Centered on mobile */}
                     <div
-                      className="w-[250px] h-[450px] my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[20px] md:rounded-[30px]"
+                      className={`w-[200px] h-[300px] my-6 sm:my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[15px] sm:rounded-[20px] md:rounded-[30px]`}
                       style={{
                         backgroundImage: `url(${images[getImageIndex(0)]})`,
                         backgroundSize: "cover",
