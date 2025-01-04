@@ -61,7 +61,7 @@ const Gallery: React.FC = () => {
             <div>
               <div className="absolute top-8 md:top-14 left-0 right-0 text-center">
                 <h1
-                  className={`text-center font-bold text-4xl my-14 md:my-0 text-shadow-custom ${michroma.className}`}
+                  className={`text-center font-bold text-4xl my-14 md:my-0 ${michroma.className}`} style={{textShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)'}}
                 >
                   GALLERY SECTION
                 </h1>
