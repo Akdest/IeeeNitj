@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Michroma, Montserrat} from 'next/font/google'
 import { StaticImageData } from 'next/image';
 
@@ -29,12 +29,15 @@ function checkVP() {
 
 export default function NewsEvents() {
 
-  const [mobileVP, setMobileVP] = useState(checkVP())
+  const [mobileVP, setMobileVP] = useState(false)
 
-  setInterval(()=>{
-    const cVP = checkVP()
-    if(mobileVP != cVP) setMobileVP(cVP)
-  },500)
+  useEffect(()=>{
+    if(typeof window !== 'undefined')
+    setInterval(()=>{
+      const cVP = checkVP()
+      if(mobileVP !== cVP)setMobileVP(cVP)
+    },500)
+  },[mobileVP])
 
   const Heading: React.FC<HeadingProps> = (props) => {
 
