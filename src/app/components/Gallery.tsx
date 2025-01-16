@@ -11,9 +11,6 @@ const image2 = "/image2.jpeg" as unknown as StaticImageData;
 const image3 = "/image3.jpeg" as unknown as StaticImageData;
 const image4 = "/image4.jpeg" as unknown as StaticImageData;
 
-const leftArrow = "/left_arrow.png";
-const rightArrow = "/right_arrow.png";
-
 const images: StaticImageData[] = [image1, image2, image3, image4];
 
 const Gallery: React.FC = () => {
@@ -27,8 +24,8 @@ const Gallery: React.FC = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+  const goToSlide = (offset: number) => {
+    setCurrentIndex((currentIndex + offset + images.length) % images.length);
   };
 
   const getImageIndex = (offset: number): number => {
@@ -41,96 +38,56 @@ const Gallery: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <div
-      className="relative h-screen"
-      style={{
-        backgroundImage: "url('/main.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div
-        className="absolute top-6 left-4 right-4 bottom-6 md:top-12 md:left-12 md:right-12 md:bottom-12 flex justify-center items-center rounded-[20px] md:rounded-[40px]"
-        style={{ backgroundColor: "#374E72" }}
-      >
-        <div className="p-2 md:p-4 shadow-lg">
-          <div
-            className="absolute top-4 left-4 right-4 bottom-4 md:top-9 md:left-9 md:right-9 md:bottom-9 overflow-hidden rounded-[20px] md:rounded-[40px]"
-            style={{ backgroundColor: "#E0F4FF" }}
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#E7F2F8] to-[#B7D5F3]">
+      <div className="absolute top-6 sm:top-16 right-4 left-4 sm:right-12 sm:left-12 bottom-4 sm:bottom-9 border-2 sm:border-4 border-[#99B6D9] rounded-3xl md:rounded-[50px] flex items-center justify-center">
+        <div className="absolute h-full w-full flex flex-col items-center px-4 md:px-8">
+          <h1
+            className={`absolute top-16 sm:top-12 lg:top-7 text-center text-4xl ${michroma.className}`}
+            style={{ textShadow: "0px 3px 3px rgba(0, 0, 0, 0.25)", fontWeight: "700" }}
           >
-            <div>
-              <div className="absolute top-8 md:top-14 left-0 right-0 text-center">
-                <h1
-                  className={`text-center font-bold text-4xl my-14 md:my-0 ${michroma.className}`} style={{textShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)'}}
-                >
-                  GALLERY SECTION
-                </h1>
-                <div className="flex justify-between items-center mt-10 md:mt-14">
-                  {/* Left Arrow */}
-                  <img
-                    src={leftArrow}
-                    alt="Left Arrow"
-                    className="w-6 md:w-10 cursor-pointer ml-3 md:block"
-                    onClick={prevSlide}
-                  />
+            GALLERY SECTION
+          </h1>
 
-                  {/* Carousel Images */}
-                  <div className="flex md:space-x-28 items-center justify-center">
-                    {/* Div 1: Hidden on mobile */}
-                    <div
-                      className="hidden md:block w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
-                      style={{
-                        backgroundImage: `url(${images[getImageIndex(-1)]})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    />
-                    
-                    {/* Div 2: Centered on mobile */}
-                    <div
-                      className={`w-[200px] h-[300px] my-6 sm:my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[15px] sm:rounded-[20px] md:rounded-[30px]`}
-                      style={{
-                        backgroundImage: `url(${images[getImageIndex(0)]})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    />
+          <div className="absolute top-56 sm:top-24 md:top-40 lg:top-28 left-0 right-0 sm:left-16 sm:right-16 flex flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
+            <div
+              className="w-12 sm:w-40 lg:w-48 h-48 sm:h-48 lg:h-56 bg-blue-200 rounded-l-none rounded-r-3xl sm:rounded-3xl shadow-md shadow-gray-500"
+              style={{
+                backgroundImage: `url(${images[getImageIndex(-1)]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div
+              className="w-48 sm:w-56 lg:w-64 h-80 sm:h-64 lg:h-72 bg-blue-300 rounded-3xl shadow-md shadow-gray-500"
+              style={{
+                backgroundImage: `url(${images[getImageIndex(0)]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div
+              className="w-12 sm:w-40 lg:w-48 h-48 sm:h-48 lg:h-56 bg-blue-200 rounded-r-none rounded-l-3xl sm:rounded-3xl shadow-md shadow-gray-500"
+              style={{
+                backgroundImage: `url(${images[getImageIndex(1)]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </div>
 
-                    {/* Div 3: Hidden on mobile */}
-                    <div
-                      className="hidden md:block w-32 h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
-                      style={{
-                        backgroundImage: `url(${images[getImageIndex(1)]})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    />
-                  </div>
-
-                  {/* Right Arrow */}
-                  <img
-                    src={rightArrow}
-                    alt="Right Arrow"
-                    className="w-6 md:w-10 cursor-pointer mr-3 md:block"
-                    onClick={nextSlide}
-                  />
-                </div>
-
-
-                {/* Dotted Navigation */}
-                <div className="absolute mt-6 md:mt-9 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-                        currentIndex === index ? "bg-white" : "bg-gray-500"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="absolute hidden sm:flex bottom-36 sm:bottom-24 space-x-3">
+            <button
+              onClick={() => goToSlide(-1)}
+              className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white"
+            />
+            <button
+              onClick={() => goToSlide(0)}
+              className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white"
+            />
+            <button
+              onClick={() => goToSlide(1)}
+              className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white"
+            />
           </div>
         </div>
       </div>
