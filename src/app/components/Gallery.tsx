@@ -2,16 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { Michroma } from "next/font/google";
-import { StaticImageData } from "next/image";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
-const image1 = "/image1.jpeg" as unknown as StaticImageData;
-const image2 = "/image2.jpeg" as unknown as StaticImageData;
-const image3 = "/image3.jpeg" as unknown as StaticImageData;
-const image4 = "/image4.jpeg" as unknown as StaticImageData;
-
-const images: StaticImageData[] = [image1, image2, image3, image4];
+const images = ["/image1.jpeg", "/image2.jpeg", "/image3.jpeg", "/image4.jpeg"];
 
 const Gallery: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
