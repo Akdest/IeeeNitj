@@ -4,7 +4,7 @@ import { Michroma } from "next/font/google";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const textStyling = {
-  color: "blue",
+  color: "#1F41BB",
 };
 
 const Aboutsection = () => {
@@ -12,11 +12,11 @@ const Aboutsection = () => {
     <div className=" flex justify-center">
       <div
         className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]"
-        style={{ backgroundColor: "#E0F4FF" }}
+        // style={{ backgroundColor: "#E0F4FF" }}
       >
         <div
           className="relative top-5 w-[90%] rounded-full flex justify-center shadow-xl h-[120px] items-center row-span-2 mx-auto"
-          style={{ backgroundColor: "#E0F4FF" }}
+          // style={{ backgroundColor: "#E0F4FF" }}
         >
           <h2 className={`text-black text-4xl ${michroma.className}`}>
             ABOUT US
@@ -59,17 +59,17 @@ const Aboutsection = () => {
           </div>
           <div className="mt-10">
             <div className="grid grid-cols-2 gap-4">
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-gray-100">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
                 Over <span style={textStyling}>460,000</span> members in more
                 than <span style={textStyling}>190</span> countries.
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-gray-100">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
                 IEEE was formed in <span style={textStyling}>1963</span>
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-gray-100">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
                 <span style={textStyling}>300</span> conferences each year
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-gray-100">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
                 <span style={textStyling}>344 </span> sections,{" "}
                 <span style={textStyling}>2,709 </span> chapters,{" "}
                 <span style={textStyling}>3,635 </span> student branches
