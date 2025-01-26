@@ -1,11 +1,10 @@
 "use client"
 
 import React from 'react';
-import { useState, useEffect } from 'react';
 import {Michroma, Montserrat} from 'next/font/google'
 import { StaticImageData } from 'next/image';
 
-import demo from '../public/Demo.png'
+import demo from '../../../public/Demo.png'
 
 const michroma = Michroma({ weight: ['400'], subsets: ['latin'] });
 const montserrat = Montserrat({ weight: ['400'], subsets: ['latin'] });
@@ -22,27 +21,13 @@ interface EventCardProps {
   img: StaticImageData;
 }
 
-function checkVP() {
-  if(window.innerWidth < 800) return true;
-  return false;
-}
-
 export default function NewsEvents() {
-
-  const [mobileVP, setMobileVP] = useState(false)
-
-  useEffect(()=>{
-    if(typeof window !== 'undefined')
-    setInterval(()=>{
-      const cVP = checkVP()
-      if(mobileVP !== cVP)setMobileVP(cVP)
-    },500)
-  },[mobileVP])
 
   const Heading: React.FC<HeadingProps> = (props) => {
 
     const  headingStyle: React.CSSProperties = {
-      fontSize:"2.2rem", textAlign:"center", fontWeight:100, color:"black",
+      // fontSize:"2.2rem", 
+      textAlign:"center", fontWeight:100, color:"black",
       fontFamily:'Michroma',
       WebkitTextStrokeWidth:1,
       WebkitTextStrokeColor:'#8A92DD',
@@ -51,7 +36,7 @@ export default function NewsEvents() {
     }
 
     return (
-      <div className={michroma.className} style={headingStyle}>
+      <div className={`${michroma.className} text-[1.6rem] sm:text-[2.2rem]`} style={headingStyle}>
         {
           props.text.split(' ').length>1?
           <>
@@ -90,13 +75,13 @@ export default function NewsEvents() {
     }
 
     return (
-      <div style={{margin:"5px", height:"100%", width:mobileVP?"95%":"35%", boxSizing:"border-box"}}>
+      <div className='w-[95%]' style={{margin:"5px", height:"100%", boxSizing:"border-box"}}>
         <Heading text='NEWS' />
 
         {/* Bubble Container */}
         {/* Implement auto scroll in the future */}
         <div style={{display:"flex", flexDirection:"column", alignItems:"center",
-          height:"85%", boxSizing:"border-box", 
+          height:"85%", boxSizing:"border-box", justifyContent:"center",
           paddingTop:"10px", paddingBottom:"10px", overflow:"auto", gap:"15px"
         }}>
           {
@@ -116,23 +101,23 @@ export default function NewsEvents() {
     const EventCard: React.FC<EventCardProps> = (props) => {
 
       const EventCardStyle:React.CSSProperties = {
-        backgroundColor:"#8DB5F1", borderRadius:"15px", width:mobileVP?"95%":"40%", height:mobileVP?"40%":"65%",
-        border:"2px solid #8CA9DF",
+        backgroundColor:"#1976D2BF", borderRadius:"15px",
+        border:"2px solid #1976D2",
         boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
       }
       const EventImageStyle:React.CSSProperties = {
         width:'96%', height:"96%", borderRadius:"11px",
-        backgroundImage: `url(${props.img.src})`, backgroundSize: 'cover'
+        backgroundImage: `url(${props.img.src})`, backgroundSize: 'cover', borderColor:"#1976D2", borderWidth:"1px",
       }
 
       return (
         <>
-        <div style={EventCardStyle}>
+        <div className='w-[95%] sm:w-[40%] h-[40%] sm:h-[65%]' style={EventCardStyle}>
       
           {/* Image Card */}
           <div style={{width:"100%", height:"65%", padding:"4%"}}>
               <div style={{width:"100%", borderRadius:"15px", height:"100%", 
-                border:"2px solid #8CA9DF", backgroundColor:"#D9D9D9", display:"flex", 
+                border:"2px solid #1976D2", backgroundColor:"#D9D9D9", display:"flex", 
                 alignItems:"center", justifyContent:"center"}}>
                 <div style={EventImageStyle}/>
               </div>
@@ -149,7 +134,8 @@ export default function NewsEvents() {
             {/* Button Section */}
             <div style={{width:"30%", display:"flex", alignItems:"center", justifyContent:"center"}}>
               <div style={{width:'100%',aspectRatio:"1/1", borderRadius:"50%", 
-                backgroundColor:"#869bca", padding:"5px", margin:"10px"
+                backgroundColor:"#1976D2", padding:"5px", margin:"10px",
+                // boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
               }} />
             </div>
 
@@ -160,11 +146,11 @@ export default function NewsEvents() {
     }
 
     return (
-      <div style={{margin:"5px auto", width:mobileVP?"90%":"65%", height:"100%", boxSizing:"border-box"}}>
+      <div className='w-[90%] sm:w-[65%]' style={{margin:"5px auto", height:"100%", boxSizing:"border-box"}}>
         <Heading text='UPCOMING EVENTS' />
 
         {/* Event Card List Div */}
-        <div style={{height:mobileVP?"80%":'85%', display:"flex", flexDirection:mobileVP?"column":"row", alignItems:"center", justifyContent:"space-evenly"}}>
+        <div className='h-[80%] sm:h-[85%] flex-col sm:flex-row' style={{display:"flex", alignItems:"center", justifyContent:"space-evenly"}}>
           <EventCard img={demo} text={'lorem ipsum ieee'} />
           <EventCard img={demo} text={'lorem ipsum ieee'} />
         </div>
@@ -174,22 +160,24 @@ export default function NewsEvents() {
   }
 
   return (
-    <div style={{height:(mobileVP?"200svh":"100svh"), width:"100%",padding:"5vw"}}>
-      <div style={{background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", height:mobileVP?"95svh":"100%", width:"100%", borderRadius:'30px', display:"flex"}}>
+    <div className='h-[200svh] sm:h-[100svh]' style={{width:"100%",padding:"5vw"}}>
+      <div className='h-[95svh] sm:h-[100%]' 
+      style={{
+        // background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)",
+         width:"100%", borderRadius:'30px', display:"flex"}}>
         
         <Events/>
-        {
-          !mobileVP&&
-          <News/>
-        }
-
-      </div>
-      {
-        mobileVP&&
-        <div style={{background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", height:"95svh",marginTop:"5svh", width:"100%", borderRadius:'30px', display:"flex"}}>
+        <div className='hidden sm:block border-black border-[1.5px] border h-[70%] m-auto'></div>
+        <div className='hidden sm:block flex flex-row items-center justify-center'>
           <News/>
         </div>
-      }
+
+      </div>
+      <div className='flex sm:hidden' style={{
+        // background:"linear-gradient(to bottom, #E0F5FF, #AFCFF1)", 
+        height:"95svh",marginTop:"5svh", width:"100%", borderRadius:'30px'}}>
+        <News/>
+      </div>
     </div>
   )
 };
