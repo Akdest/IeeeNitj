@@ -1,11 +1,25 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 
 export default function CoverPage() {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsWideScreen(window.innerWidth > 625);
+    };
+
+    checkWidth();
+
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
   return (
     <>
       <div className="w-full h-full flex flex-col items-center justify-center">
-        {window.innerWidth > 625 ? (
+        {isWideScreen ? (
           <div className="background w-full h-full flex ">
             <div
               className="mx-auto w-10/12 h-[98vh] rounded-tl-[65px] rounded-tr-[65px] border border-black overflow-clip"
@@ -80,7 +94,6 @@ export default function CoverPage() {
                     style={{
                       strokeWidth: "10.835px",
                       stroke: "#000",
-                      backgroundBlendMode: " darken, darken",
                       zIndex: 1000,
                     }}
                   />
@@ -120,7 +133,6 @@ export default function CoverPage() {
                 style={{
                   strokeWidth: "10.835px",
                   stroke: "#000",
-                  backgroundBlendMode: " darken, darken",
                   zIndex: 1000,
                 }}
               />
