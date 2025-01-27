@@ -9,16 +9,12 @@ const textStyling = {
 
 const Aboutsection = () => {
   return (
-    <div className=" flex justify-center">
-      <div
-        className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]"
-        // style={{ backgroundColor: "#E0F4FF" }}
-      >
-        <div
-          className="relative top-5 w-[90%] rounded-full flex justify-center shadow-xl h-[120px] items-center row-span-2 mx-auto"
-          // style={{ backgroundColor: "#E0F4FF" }}
-        >
-          <h2 className={`text-black text-4xl ${michroma.className}`}>
+    <div className="flex justify-center">
+      <div className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]">
+        <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-xl h-[120px] items-center row-span-2 mx-auto">
+          <h2
+            className={`text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${michroma.className}`}
+          >
             ABOUT US
           </h2>
         </div>
@@ -28,9 +24,9 @@ const Aboutsection = () => {
           <div className="col-span-1 mt-3">
             <div>
               <h2
-                className={`text-black text-2xl mb-4 ${michroma.className}`}
+                className={`text-black text-xl sm:text-2xl mb-4 ${michroma.className}`}
                 style={{
-                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.4)", 
+                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.4)",
                 }}
               >
                 ABOUT IEEE
@@ -78,9 +74,9 @@ const Aboutsection = () => {
 
             <div className="mt-10">
               <h2
-                className={`text-black text-2xl mb-4 ${michroma.className}`}
+                className={`text-black text-xl sm:text-2xl mb-4 ${michroma.className}`}
                 style={{
-                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.4)", 
+                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.4)",
                 }}
               >
                 ABOUT NITJ
