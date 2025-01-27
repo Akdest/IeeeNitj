@@ -94,7 +94,6 @@ export default function CoverPage() {
                     style={{
                       strokeWidth: "10.835px",
                       stroke: "#000",
-                      zIndex: 1000,
                     }}
                   />
                 </div>
@@ -133,7 +132,6 @@ export default function CoverPage() {
                 style={{
                   strokeWidth: "10.835px",
                   stroke: "#000",
-                  zIndex: 1000,
                 }}
               />
             </div>
