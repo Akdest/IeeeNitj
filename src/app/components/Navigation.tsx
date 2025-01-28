@@ -33,6 +33,7 @@ export default function NavigationBar({ login = false }) {
             onClick={() => {
               setHamburger(!hamburger);
             }}
+            className="bg-[#00367070] rounded-xl flex justify-center items-center"
           >
             <img src="/ci_hamburger-lg.svg" alt="" className="w-11/12 h-full" />
           </button>
