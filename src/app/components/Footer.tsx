@@ -120,10 +120,10 @@ export default function Footer() {
           </div>
           <style jsx>{`
             .wave-animation {
-                animation: moveWave1 6s linear infinite;
+                animation: moveWave1 10s linear infinite;
             }
             .wave-animation1 {
-                animation: moveWave2 6s linear infinite;
+                animation: moveWave2 10s linear infinite;
             }
             @keyframes moveWave1 {
                 0% {

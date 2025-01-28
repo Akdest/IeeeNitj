@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-
 export default function CoverPage() {
   const [isWideScreen, setIsWideScreen] = useState(false);
 
@@ -90,7 +89,7 @@ export default function CoverPage() {
                   <img
                     src="/ellipse.svg"
                     alt=""
-                    className="mx-auto mt-5 w-[28%] h-[28%]"
+                    className="ellipse mx-auto mt-5 w-[28%] h-[28%]"
                     style={{
                       strokeWidth: "10.835px",
                       stroke: "#000",
@@ -128,7 +127,7 @@ export default function CoverPage() {
               <img
                 src="/ellipse.svg"
                 alt=""
-                className="mx-auto mt-16 w-[70%] h-[70%]"
+                className="ellipse mx-auto mt-16 w-[70%] h-[70%]"
                 style={{
                   strokeWidth: "10.835px",
                   stroke: "#000",
@@ -138,6 +137,7 @@ export default function CoverPage() {
           </div>
         )}
       </div>
+      
     </>
   );
 }
