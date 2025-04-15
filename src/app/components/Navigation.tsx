@@ -24,7 +24,7 @@ export default function NavigationBar({ login = false }) {
         }}
       >
       </div> */}
-      <div className="navBar p-5">
+      <div className="navBar p-5 h-[100px] fixed top-0 w-full z-50 backdrop-blur-lg bg-[#0b112660] border-b border-white/20">
         <div className="head fixed left-5 flex justify-center items-center w-[180px] h-[59px] rounded-lg font-semibold bg-white text-black p-2 ">
           <img src="/IEEE NITJ Student Branch (1).jpg" alt="" className="w-full h-full rounded-lg"/>
         </div>

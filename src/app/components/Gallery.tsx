@@ -57,7 +57,7 @@ const Gallery: React.FC = () => {
         <div className="p-2 md:p-4 shadow-lg">
           <div
             className="absolute top-4 left-4 right-4 bottom-4 md:top-9 md:left-9 md:right-9 md:bottom-9 overflow-hidden 
-            rounded-[20px] md:rounded-[40px] border border-black"
+            rounded-[20px] md:rounded-[40px]"
             // style={{ backgroundColor: "#E0F4FF" }}
           >
             <div>
@@ -80,7 +80,7 @@ const Gallery: React.FC = () => {
                   <div className="flex md:space-x-28 items-center justify-center">
                     {/* Div 1: Hidden on mobile */}
                     <div
-                      className="hidden md:block w-32 border border-[2px] border-[white] shadow-xl h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
+                      className="hidden md:block w-32 shadow-xl h-40 md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
                       style={{
                         backgroundImage: `url(${images[getImageIndex(-1)]})`,
                         backgroundSize: "cover",
@@ -90,7 +90,7 @@ const Gallery: React.FC = () => {
                     
                     {/* Div 2: Centered on mobile */}
                     <div
-                      className={`w-[200px] h-[300px] border border-[2px] border-[white] shadow-xl my-6 sm:my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[15px] sm:rounded-[20px] md:rounded-[30px]`}
+                      className={`w-[200px] h-[300px] shadow-xl my-6 sm:my-10 md:my-0 md:w-72 md:h-80 bg-blue-300 rounded-[15px] sm:rounded-[20px] md:rounded-[30px]`}
                       style={{
                         backgroundImage: `url(${images[getImageIndex(0)]})`,
                         backgroundSize: "cover",
@@ -100,7 +100,7 @@ const Gallery: React.FC = () => {
 
                     {/* Div 3: Hidden on mobile */}
                     <div
-                      className="hidden md:block w-32 h-40 border border-[2px] border-[white] shadow-xl md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
+                      className="hidden md:block w-32 h-40 shadow-xl md:w-56 md:h-64 bg-blue-200 rounded-[15px] md:rounded-[25px]"
                       style={{
                         backgroundImage: `url(${images[getImageIndex(1)]})`,
                         backgroundSize: "cover",
