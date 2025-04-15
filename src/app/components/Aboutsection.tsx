@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { Michroma } from "next/font/google";
+import { Montserrat as MontserratFont } from "next/font/google";
 
-const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
+const Montserrat = MontserratFont({ weight: ["400"], subsets: ["latin"] });
 const textStyling = {
   color: "#1F41BB",
 };
@@ -13,7 +13,7 @@ const Aboutsection = () => {
       <div className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]">
         <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-xl h-[120px] items-center row-span-2 mx-auto">
           <h2
-            className={`text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${michroma.className} font-extrabold`}
+            className={`text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
           >
             ABOUT US
           </h2>
@@ -24,7 +24,7 @@ const Aboutsection = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <h2
-                className={`text-black text-xl sm:text-2xl mb-4 ${michroma.className} font-extrabold`}
+                className={`text-black text-xl sm:text-3xl mb-4 ${Montserrat.className} font-extrabold`}
               >
                 ABOUT IEEE
               </h2>
@@ -36,17 +36,17 @@ const Aboutsection = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33] cursor-pointer">
                 Over <span style={textStyling}>460,000</span> members in more
                 than <span style={textStyling}>190</span> countries.
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33] cursor-pointer">
                 IEEE was formed in <span style={textStyling}>1963</span>
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33] cursor-pointer">
                 <span style={textStyling}>300</span> conferences each year
               </div>
-              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33]">
+              <div className="border-2 border-black p-4 font-bold rounded-xl bg-[#BDD6FB33] cursor-pointer">
                 <span style={textStyling}>344</span> sections,{" "}
                 <span style={textStyling}>2,709</span> chapters,
                 <span style={textStyling}>3,635</span> student branches
@@ -65,11 +65,11 @@ const Aboutsection = () => {
               }}
             ></div>
             <div className="flex-1">
-              <h2
-                className={`text-black text-xl sm:text-2xl mb-4 ${michroma.className}`}
+              <h1
+                className={`text-black text-xl sm:text-3xl mb-4 ${Montserrat.className}`}
               >
                 ABOUT NITJ
-              </h2>
+              </h1>
               <p className="text-black text-base w-[90%]">
                 Dr B R Ambedkar National Institute of Technology was established
                 in 1987 as Regional Engineering College and was given the status
