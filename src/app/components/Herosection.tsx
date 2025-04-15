@@ -32,8 +32,8 @@ const Herosection: React.FC = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}>
-        <div className="absolute inset-3 flex justify-center items-center rounded-[20px] md:rounded-[50px]" style={{backgroundColor: "#43475D"}} >
-          <div className="p-2 md:p-4 shadow-lg">
+        <div className="absolute inset-3 flex justify-center items-center rounded-[20px] md:rounded-[50px]">
+          <div className=" md:shadow-lg">
             <div className="absolute top-2 left-2 right-2 bottom-2 md:top-3 md:left-3 md:right-3 md:bottom-3 bg-white overflow-hidden rounded-[20px] md:rounded-[50px]">
               {/* Background Carousel */}
               <div
@@ -50,6 +50,7 @@ const Herosection: React.FC = () => {
                       backgroundImage: `url(${src})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
+                      width:'100%'
                     }}
                   ></div>
                 ))}
