@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 
 export default function SplashScreen() {
   const [isWideScreen, setIsWideScreen] = useState(false);
@@ -15,40 +15,32 @@ export default function SplashScreen() {
     checkWidth();
     window.addEventListener("resize", checkWidth);
 
+    // Lock scroll
+    if (showSplash) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
     return () => {
       window.removeEventListener("resize", checkWidth);
+      document.body.style.overflow = "auto"; // fallback unlock
     };
-  }, []);
+  }, [showSplash]);
 
   if (!showSplash) return null;
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center bg-gradient-radial z-[9999] fixed top-0 left-0">
-      <style jsx>{`
-        .bg-gradient-radial {
-          background: radial-gradient(
-            circle,
-            #004e92 30%,
-            #000428 95%
-          );
-        }
-        .rotate-slow {
-          animation: rotate 10s linear infinite;
-        }
-        @keyframes rotate {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-
+    <div
+      className="w-full h-screen flex flex-col items-center justify-center z-[9999] fixed top-0 left-0 overflow-hidden"
+      style={{
+        background: "radial-gradient(circle at center, #004E92 30%, #000428 95%)",
+      }}
+    >
       {isWideScreen ? (
         <div className="w-full h-full flex">
           <div
-            className="mx-auto w-10/12 h-[98vh] rounded-tl-[65px] rounded-tr-[65px] border border-black overflow-clip"
+            className="mx-auto w-10/12 h-[98vh] rounded-tl-[65px] rounded-tr-[65px] border border-black overflow-clip relative"
             style={{
               background: "rgba(217, 217, 217, 0.10)",
               boxShadow:
@@ -103,13 +95,19 @@ export default function SplashScreen() {
                 <img
                   src="/ellipse.svg"
                   alt=""
-                  className="mx-auto mt-5 w-[28%] h-[28%] rotate-slow"
+                  className="mx-auto mt-5 w-[28%] h-[28%] animate-spin-slow"
                   style={{
                     strokeWidth: "10.835px",
                     stroke: "#000",
                   }}
                 />
               </div>
+            </div>
+            <div
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-black cursor-pointer"
+              onClick={() => setShowSplash(false)}
+            >
+              <FaAngleDown size={40} className="animate-bounce" />
             </div>
           </div>
         </div>
@@ -122,7 +120,7 @@ export default function SplashScreen() {
           />
           <div className="absolute top-0 flex flex-col justify-center items-center">
             <div
-              className="mt-44 text-white text-3xl font-semibold max-w-[80%] text-center"
+              className="mt-44 text-black text-3xl font-semibold max-w-[80%] text-center"
               style={{
                 textShadow: "0px 4.334px 4.334px rgba(0, 0, 0, 0.25)",
                 fontFamily: "Michroma",
@@ -131,7 +129,7 @@ export default function SplashScreen() {
               EMPOWERING TOMORROW’S INNOVATORS AT NIT JALANDHAR!
             </div>
             <div
-              className="mt-16 text-white text-xl text-center"
+              className="mt-16 text-black text-xl text-center"
               style={{ fontFamily: "Michroma" }}
             >
               Connect.Learn.Innovate.Lead
@@ -139,23 +137,21 @@ export default function SplashScreen() {
             <img
               src="/ellipse.svg"
               alt=""
-              className="mx-auto mt-16 w-[70%] h-[70%] rotate-slow"
+              className="mx-auto mt-16 w-[70%] h-[70%] animate-spin-slow"
               style={{
                 strokeWidth: "10.835px",
                 stroke: "#000",
               }}
             />
+            <div
+              className="mt-8 text-black cursor-pointer"
+              onClick={() => setShowSplash(false)}
+            >
+              <FaAngleDown size={36} className="animate-bounce" />
+            </div>
           </div>
         </div>
       )}
-
-      {/* 🔽 Down Arrow */}
-      <div
-        className="absolute bottom-10 cursor-pointer animate-bounce text-white"
-        onClick={() => setShowSplash(false)}
-      >
-        <FaChevronDown size={30} />
-      </div>
     </div>
   );
 }
