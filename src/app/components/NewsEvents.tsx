@@ -3,7 +3,7 @@
 import React from 'react';
 import {Michroma, Montserrat} from 'next/font/google'
 import { StaticImageData } from 'next/image';
-
+import { FiExternalLink } from 'react-icons/fi';
 import demo from '../../../public/Demo.png'
 
 const michroma = Michroma({ weight: ['400'], subsets: ['latin'] });
@@ -101,12 +101,12 @@ export default function NewsEvents() {
     const EventCard: React.FC<EventCardProps> = (props) => {
 
       const EventCardStyle:React.CSSProperties = {
-        backgroundColor:"#1976D2BF", borderRadius:"15px",
+        backgroundColor:"#1976D2BF", borderRadius:"15px 15px 0px",
         border:"2px solid #1976D2",
-        boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
+        boxShadow: '2px 2px 5px black'
       }
       const EventImageStyle:React.CSSProperties = {
-        width:'96%', height:"96%", borderRadius:"11px",
+        width:'100%', height:"100%", borderRadius:"11px",
         backgroundImage: `url(${props.img.src})`, backgroundSize: 'cover', borderColor:"#1976D2", borderWidth:"1px",
       }
 
@@ -132,13 +132,14 @@ export default function NewsEvents() {
               {props.text}
             </div>
             {/* Button Section */}
-            <div style={{width:"30%", display:"flex", alignItems:"center", justifyContent:"center"}}>
-              <div style={{width:'100%',aspectRatio:"1/1", borderRadius:"50%", 
-                backgroundColor:"#1976D2", padding:"5px", margin:"10px",
-                // boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
-              }} />
-            </div>
+            <div className=' bg-blue-200' style={{width:"30%", display:"flex", alignItems:"center", justifyContent:"center",position:'relative',right:'-25px',top:'14px',borderRadius:'45%'}}>
+              <div className=" w-[60%] md:w-full aspect-square rounded-full bg-[#1976D2] p-[5px] m-[10px] shadow-[1px_1px_5px_black] relative -right-[10px] cursor-pointer"
+              />
+              <FiExternalLink 
+  className="relative right-8 text-[20px] md:text-[40px] md:right-10 cursor-pointer"
+/>
 
+            </div>
           </div>
         </div>
         </>

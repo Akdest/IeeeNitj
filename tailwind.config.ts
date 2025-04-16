@@ -31,7 +31,8 @@ export default {
       animation: {
         typing: 'typing 4s steps(20, end) infinite',
         blink: 'blink 0.5s step-end infinite',
-        vibrate:'vibrate 0.8s linear infinite'
+        vibrate:'vibrate 0.8s linear infinite',
+        'spin-slow': 'spin 6s linear infinite',
       },
     },
   },
