@@ -13,7 +13,7 @@ const Aboutsection = () => {
       <div className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]">
         <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-md h-[120px] items-center row-span-2 mx-auto">
           <h2
-            className={`text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
+            className={`text-black text-5xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
           >
             ABOUT US
           </h2>
@@ -24,7 +24,7 @@ const Aboutsection = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <h2
-                className={`text-black text-xl sm:text-4xl mb-4 ${Montserrat.className} font-extrabold`}
+                className={`text-black font-bold text-3xl sm:text-xl mb-4 ${Montserrat.className} font-extrabold`}
               >
                 ABOUT IEEE
               </h2>
@@ -66,7 +66,7 @@ const Aboutsection = () => {
             ></div>
             <div className="flex-1">
               <h1
-                className={`text-black text-xl sm:text-4xl mb-4 ${Montserrat.className}`}
+                className={`text-black font-bold text-3xl sm:text-4xl mb-4 ${Montserrat.className}`}
               >
                 ABOUT NITJ
               </h1>

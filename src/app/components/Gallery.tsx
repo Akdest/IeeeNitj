@@ -56,7 +56,7 @@ const Gallery: React.FC = () => {
       >
         <div className="p-2 md:p-4 shadow-lg">
           <div
-            className="absolute top-4 left-4 right-4 bottom-4 md:top-9 md:left-9 md:right-9 md:bottom-9 overflow-hidden 
+            className="absolute top-1 left-4 right-4 bottom-4 md:top-2 md:left-9 md:right-9 md:bottom-9 overflow-hidden 
             rounded-[20px] md:rounded-[40px]"
             // style={{ backgroundColor: "#E0F4FF" }}
           >

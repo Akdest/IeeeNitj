@@ -48,53 +48,47 @@ export default function NewsEvents() {
     )
   }
 
-  function News() {
-
-
-    const newsData = ['Neque porro quisquamest qui dolorem ipsum','This is some very interesting news', 'This is some more, less interesting news', 
-      'more news', 'Link to backend later........']
-    
-    const NewsBubble: React.FC<NewsBubbleProps> = (props) => {
-
-      const divStyle: React.CSSProperties = {
-        backgroundColor:"#94C4FB", border:"2px solid #8AB6E8", borderRadius:"45px",
-        width:"90%", color:"black", paddingLeft:"5px", paddingRight:"10px",
-        textAlign:"center", display:"flex", fontSize:"0.87rem",
-        boxShadow: '2px 2px 5px rgba(128, 128, 128, 0.5)'
-
-      }
-
-      return (
-        <div style={divStyle}>
-          <div style={{width:"5%", borderColor:"#0C377B", borderStyle:"solid", marginTop:"3%", marginBottom:"3%", borderRightWidth:"2px", height:"auto"}}></div>
-          <div style={{width:'95%', padding:"10px"}} className={montserrat.className}>
-            {props.text}
-          </div>
-        </div>
-      )
-    }
-
+  const News: React.FC = () => {
+    const newsData = [
+      'Neque porro quisquam est qui dolorem ipsum',
+      'This is some very interesting news',
+      'This is some more, less interesting news',
+      'More news coming your way!',
+      'Link to backend later........',
+    ];
+  
     return (
-      <div className='w-[95%]' style={{ height:"100%", boxSizing:"border-box"}}>
-        <Heading text='NEWS' />
-
-        {/* Bubble Container */}
-        {/* Implement auto scroll in the future */}
-        <div style={{display:"flex", flexDirection:"column", alignItems:"center",
-          height:"85%", boxSizing:"border-box", justifyContent:"center",
-          paddingTop:"10px", paddingBottom:"10px", overflow:"auto", gap:"15px"
-        }}>
-          {
-            newsData.map((n,k)=>
-              <NewsBubble key={k} text={n}/>
-            )
-          }
-
+      <div className="w-[95%] h-full box-border mx-auto">
+        <Heading text="NEWS" />
+  
+        {/* Scrollable News Bubble Container */}
+        <div
+          className="flex flex-col items-center gap-4 overflow-y-auto pt-4 pb-6 h-[85%] box-border"
+          style={{ scrollbarWidth: 'thin' }}
+        >
+          {newsData.map((n, k) => (
+            <NewsBubble key={k} text={n} />
+          ))}
         </div>
-
       </div>
-    )
+    );
+  };
+  interface NewsBubbleProps {
+    text: string;
   }
+  
+  const NewsBubble: React.FC<NewsBubbleProps> = ({ text }) => {
+    return (
+      <div
+        className="flex w-[90%] max-w-4xl items-center shadow-md border-2 border-[#8AB6E8] bg-[#94C4FB] rounded-full px-4 py-3 text-sm sm:text-base hover:scale-[1.01] transition-transform duration-200"
+      >
+        <div className="w-[5%] border-r-2 border-[#0C377B] h-full"></div>
+        <div className={`w-[95%] px-4 ${montserrat.className}`}>
+          {text}
+        </div>
+      </div>
+    );
+  };  
 
   function Events() {
 
