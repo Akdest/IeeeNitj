@@ -11,9 +11,9 @@ const Aboutsection = () => {
   return (
     <div className="flex justify-center">
       <div className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]">
-        <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-xl h-[120px] items-center row-span-2 mx-auto">
+        <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-md h-[120px] items-center row-span-2 mx-auto">
           <h2
-            className={`text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
+            className={`text-black text-5xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
           >
             ABOUT US
           </h2>
@@ -24,11 +24,11 @@ const Aboutsection = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <h2
-                className={`text-black text-xl sm:text-3xl mb-4 ${Montserrat.className} font-extrabold`}
+                className={`text-black font-bold text-3xl sm:text-xl mb-4 ${Montserrat.className} font-extrabold`}
               >
                 ABOUT IEEE
               </h2>
-              <p className="text-black text-base w-[90%]">
+              <p className="text-black text-lg w-[90%]">
                 The IEEE Student Chapter at NIT Jalandhar is a dynamic community
                 of tech enthusiasts, innovators, and leaders committed to
                 fostering professional growth, technical excellence, and
@@ -66,11 +66,11 @@ const Aboutsection = () => {
             ></div>
             <div className="flex-1">
               <h1
-                className={`text-black text-xl sm:text-3xl mb-4 ${Montserrat.className}`}
+                className={`text-black font-bold text-3xl sm:text-4xl mb-4 ${Montserrat.className}`}
               >
                 ABOUT NITJ
               </h1>
-              <p className="text-black text-base w-[90%]">
+              <p className="text-black text-lg w-[90%]">
                 Dr B R Ambedkar National Institute of Technology was established
                 in 1987 as Regional Engineering College and was given the status
                 of National Institute of Technology (Deemed University) by the

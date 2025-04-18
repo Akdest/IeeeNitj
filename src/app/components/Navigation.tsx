@@ -1,13 +1,22 @@
 "use client";
-import { useState } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavigationBar({ login = false }) {
   const log = login ? "Log Out" : "Log In";
-  const [hamburger, setHamburger] = useState<boolean>(false);
+  const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleSubMenu = (menu: string) => {
     setActiveSubMenu((prevMenu) => (prevMenu === menu ? null : menu));
   };
@@ -24,9 +33,20 @@ export default function NavigationBar({ login = false }) {
         }}
       >
       </div> */}
-      <div className="navBar p-5 h-[90px] fixed top-0 w-full z-50 backdrop-blur-lg bg-[#0b112660] border-b border-white/20">
+      <div className="relative w-full z-50" style={{ fontFamily: "Michroma" }}>
+      <div
+        className={`navBar p-5 h-[90px] fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "backdrop-blur-lg bg-[#0b112660] border-b border-white/20"
+            : "bg-transparent border-none"
+        }`}
+      >
         <div className="head fixed left-5 flex justify-center items-center w-[180px] h-[59px] rounded-lg font-semibold bg-white text-black p-2 ">
-          <img src="/IEEE NITJ Student Branch (1).jpg" alt="" className="w-full h-full rounded-lg"/>
+          <img
+            src="/IEEE NITJ Student Branch (1).jpg"
+            alt=""
+            className="w-full h-full rounded-lg"
+          />
         </div>
         <div className="hamBurger fixed right-5">
           <button
@@ -38,6 +58,7 @@ export default function NavigationBar({ login = false }) {
             <img src="/ci_hamburger-lg.svg" alt="" className="w-11/12 h-full" />
           </button>
         </div>
+      </div>
       </div>
       <div
         className={`menuBar overflow-auto fixed top-0 pt-16 pb-10 pr-20 pl-5 h-screen w-full grid sm:grid-cols-2 grid-cols-1 gap-20 transition-all duration-500 ease-in-out ${

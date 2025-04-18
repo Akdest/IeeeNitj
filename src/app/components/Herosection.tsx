@@ -32,61 +32,61 @@ const Herosection: React.FC = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}>
-        <div className="absolute inset-3 flex justify-center items-center rounded-[20px] md:rounded-[50px]">
-          <div className=" md:shadow-lg">
-            <div className="absolute top-2 left-2 right-2 bottom-2 md:top-3 md:left-3 md:right-3 md:bottom-3 bg-white overflow-hidden rounded-[20px] md:rounded-[50px]">
-              {/* Background Carousel */}
-              <div
-                className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentIndex * 100}%)`,
-                }}
-              >
-                {images.map((src, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full flex-shrink-0"
-                    style={{
-                      backgroundImage: `url(${src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      width:'100%'
-                    }}
-                  ></div>
-                ))}
-              </div>
+        <div className="absolute inset-0 flex justify-center items-center rounded-none">
+  <div className="w-screen h-screen md:shadow-lg">
+    <div className="w-full h-full absolute top-0 right-0 bottom-0 left-0 bg-white overflow-hidden rounded-none">
+      {/* Background Carousel */}
+      <div
+        className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }}
+      >
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className="min-w-full h-full flex-shrink-0"
+            style={{
+              backgroundImage: `url(${src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
+      </div>
 
-              {/* Overlay Content */}
-              <div className="relative z-10 flex flex-col items-center justify-center h-full p-4">
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
-                  INSTITUTE OF ELECTRICAL AND
-                </h1>
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
-                  ELECTRONICS ENGINEERING
-                </h1>
-                <h1 className="text-lg md:text-2xl lg:text-4xl mt-4 md:mt-8 text-white drop-shadow-lg text-center font-semibold hidden md:block">
-                  STUDENT CHAPTER NIT JALANDHAR
-                </h1>
+      {/* Overlay Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full p-4">
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
+          INSTITUTE OF ELECTRICAL AND
+        </h1>
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
+          ELECTRONICS ENGINEERS
+        </h1>
+        <h1 className="text-lg md:text-2xl lg:text-4xl mt-4 md:mt-8 text-white drop-shadow-lg text-center font-semibold ">
+          STUDENT CHAPTER NIT JALANDHAR
+        </h1>
 
-                {/* Dotted Navigation */}
-                <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-                        currentIndex === index ? "bg-white" : "bg-gray-500"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            </div>
-          </div>
+        {/* Dotted Navigation */}
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
+                currentIndex === index ? "bg-white" : "bg-gray-500"
+              }`}
+            />
+          ))}
         </div>
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+    </div>
+  </div>
+</div>
+
       </div>
     </>
   );
