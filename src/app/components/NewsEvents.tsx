@@ -75,7 +75,7 @@ export default function NewsEvents() {
     }
 
     return (
-      <div className='w-[95%]' style={{margin:"5px", height:"100%", boxSizing:"border-box"}}>
+      <div className='w-[95%]' style={{ height:"100%", boxSizing:"border-box"}}>
         <Heading text='NEWS' />
 
         {/* Bubble Container */}
@@ -149,7 +149,6 @@ export default function NewsEvents() {
     return (
       <div className='w-[90%] sm:w-[65%]' style={{margin:"5px auto", height:"100%", boxSizing:"border-box"}}>
         <Heading text='UPCOMING EVENTS' />
-
         {/* Event Card List Div */}
         <div className='h-[80%] sm:h-[85%] flex-col sm:flex-row' style={{display:"flex", alignItems:"center", justifyContent:"space-evenly"}}>
           <EventCard img={demo} text={'lorem ipsum ieee'} />
