@@ -1,13 +1,9 @@
 "use client";
-
-import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
-import { Michroma, Montserrat } from "next/font/google";
-import Link from "next/link";
+import { Michroma } from "next/font/google";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
-const montserrat = Montserrat({ weight: ["400"], subsets: ["latin"] });
 
 export function Events() {
   const dataEvents = [

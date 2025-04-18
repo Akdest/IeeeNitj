@@ -5,11 +5,12 @@ import Herosection from './components/Herosection';
 import Gallery from './components/Gallery' ;
 import Aboutsection from './components/Aboutsection';
 import CoverPage from './components/CoverPage';
+import { Contact } from './pages/Contact';
 
 export default function Home() {
   return (
     <>
-    <NavigationBar login={false}/>
+    {/* <NavigationBar login={false}/>
     <CoverPage/>
     <Herosection/>
      
@@ -23,7 +24,8 @@ export default function Home() {
       <NewsEvents/>
       <Gallery/>
     </div>
-    <Footer/>
+    <Footer/> */}
+    <Contact/>
     </>
   );
 }
