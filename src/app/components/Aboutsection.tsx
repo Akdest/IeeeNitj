@@ -24,7 +24,7 @@ const Aboutsection = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <h2
-                className={`text-black font-bold text-3xl sm:text-xl mb-4 ${Montserrat.className} font-extrabold`}
+                className={`text-black font-bold text-3xl sm:text-4xl mb-4 ${Montserrat.className} font-extrabold`}
               >
                 ABOUT IEEE
               </h2>
