@@ -123,10 +123,10 @@ export default function NewsEvents() {
             </div>
             {/* Button Section */}
             <div className=' bg-blue-200' style={{width:"30%", display:"flex", alignItems:"center", justifyContent:"center",position:'relative',right:'-25px',top:'14px',borderRadius:'45%'}}>
-              <div className=" w-[60%] md:w-full aspect-square rounded-full bg-[#1976D2] p-[5px] m-[10px] shadow-[1px_1px_5px_black] relative -right-[10px] cursor-pointer"
+              <div className=" w-[60%] h-[60%] md:w-full aspect-square rounded-full bg-[#1976D2] p-[5px] m-[10px] shadow-[1px_1px_5px_black] relative -right-[10px] cursor-pointer"
               />
               <FiExternalLink 
-  className="relative right-8 text-[20px] md:text-[40px] md:right-10 cursor-pointer"
+  className="relative right-11 text-[20px] md:text-[40px] md:right-10 cursor-pointer"
 />
 
             </div>
