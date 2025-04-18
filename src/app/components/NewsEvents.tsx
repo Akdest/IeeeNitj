@@ -73,10 +73,6 @@ export default function NewsEvents() {
       </div>
     );
   };
-  interface NewsBubbleProps {
-    text: string;
-  }
-  
   const NewsBubble: React.FC<NewsBubbleProps> = ({ text }) => {
     return (
       <div
