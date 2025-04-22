@@ -1,0 +1,67 @@
+// app/committee/page.tsx or pages/committee.tsx
+"use client"; // Only for app router
+
+import Image from "next/image";
+
+const committeeMembers = [
+  {
+    name: "Aarav Mehta",
+    role: "President",
+    image: "/members/aarav.jpg",
+    bio: "Leading the club with a vision for innovation and teamwork.",
+  },
+  {
+    name: "Neha Sharma",
+    role: "Vice President",
+    image: "/members/neha.jpg",
+    bio: "Passionate about empowering students through technology.",
+  },
+  {
+    name: "Rohan Patel",
+    role: "Technical Lead",
+    image: "/members/rohan.jpg",
+    bio: "Loves coding and mentoring others in their tech journey.",
+  },
+  {
+    name: "Simran Kaur",
+    role: "Event Coordinator",
+    image: "/members/simran.jpg",
+    bio: "Ensures every event is a smooth and impactful experience.",
+  },
+  // Add more members here
+];
+
+export default function CommitteePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          Meet Our Committee
+        </h1>
+        <p className="text-gray-600 mb-12">
+          The dedicated team behind SPICE.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {committeeMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 group"
+            >
+              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+              <p className="text-sm text-indigo-600">{member.role}</p>
+              <p className="mt-2 text-sm text-gray-500">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

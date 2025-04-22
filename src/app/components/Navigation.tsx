@@ -86,11 +86,11 @@ export default function NavigationBar({ login = false }) {
           <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] xl:w-96 lg:w-72 sm:w-48 w-96">
             {[
               { name: "Home", link: "#" },
-              { name: "Events", link: "#" },
+              { name: "Events", link: "/Event" },
               { name: "News", subMenu: true },
               { name: "Gallery", link: "#" },
               { name: "Committee", subMenu: true },
-              { name: "Contacts", link: "#" },
+              { name: "Contacts", link: "/Contact" },
               { name: log, link: "#" },
             ].map(({ name, link, subMenu }, idx) => (
               <li key={idx}>
@@ -132,8 +132,8 @@ export default function NavigationBar({ login = false }) {
           `}
             >
               {[
-                { name: "Secretary", link: "#" },
-                { name: "Student", link: "#" },
+                { name: "Secretary", link: "/Commitee" },
+                { name: "Student", link: "/Commitee" },
               ].map(({ name, link },idx) => (
                 <li key={idx}>
                   <a
