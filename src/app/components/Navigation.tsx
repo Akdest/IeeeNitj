@@ -85,10 +85,11 @@ export default function NavigationBar({ login = false }) {
         <div className="sm:grid grid-cols-2 xl:gap-10 lg:gap-40 sm:gap-28 hidden">
           <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] xl:w-96 lg:w-72 sm:w-48 w-96">
             {[
-              { name: "Home", link: "#" },
+              { name: "Home", link: "/"},
+              { name: "About Us", link: "/AboutUs" },
               { name: "Events", link: "/Event" },
               { name: "News", subMenu: true },
-              { name: "Gallery", link: "#" },
+              { name: "Gallery", link: "/Gallery" },
               { name: "Committee", subMenu: true },
               { name: "Contacts", link: "/Contact" },
               { name: log, link: "#" },

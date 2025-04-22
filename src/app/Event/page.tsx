@@ -2,6 +2,7 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
 import { Michroma } from "next/font/google";
+import NavigationBar from "../components/Navigation";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
@@ -41,6 +42,8 @@ const dataEvents = [
 
 export default function Events() {
   return (
+    <>
+    <NavigationBar/>
     <div
       className={`h-full relative flex flex-col justify-center items-center ${michroma.className}`}
     >
@@ -113,5 +116,6 @@ export default function Events() {
         ))}
       </div>
     </div>
+    </>
   );
 }
