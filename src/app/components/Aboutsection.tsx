@@ -11,7 +11,7 @@ const Aboutsection = () => {
   return (
     <div className="flex justify-center">
       <div className="h-[100%] rounded-[20px] md:rounded-[40px] text-black grid-rows-4 p-7 w-[90%]">
-        <div className="relative top-5 w-[90%] rounded-full flex justify-center shadow-md h-[120px] items-center row-span-2 mx-auto">
+        <div className="relative top-5 w-[90%] rounded-full flex justify-center items-center row-span-2 mx-auto">
           <h2
             className={`text-black text-5xl md:text-5xl lg:text-6xl ${Montserrat.className} font-extrabold`}
           >
