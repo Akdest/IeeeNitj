@@ -5,7 +5,7 @@ import { Michroma, Montserrat } from "next/font/google";
 import { StaticImageData } from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import demo from "../../../public/Demo.png";
+// import demo from "../../../public/Demo.png";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const montserrat = Montserrat({ weight: ["400"], subsets: ["latin"] });
@@ -53,7 +53,7 @@ export default function NewsEvents() {
         <div
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url(${img.src})`,
+            backgroundImage: `url(${img})`,
           }}
         />
         <div className="absolute inset-0 bg-[#1976D2BF] opacity-0 hover:opacity-30 transition duration-300" />
@@ -61,11 +61,11 @@ export default function NewsEvents() {
   
       {/* Content Section */}
       <div className="h-[35%] p-4 flex flex-col justify-between">
-        <p className="text-sm sm:text-base font-medium text-[#0C377B] text-center leading-snug line-clamp-3">
+        <p className="text-sm sm:text-base font-medium text-[#0C377B] text-center leading-snug line-clamp-3 h-fit">
           {text}
         </p>
         <div className="flex justify-end pt-3">
-          <div className="w-10 h-10 bg-[#1976D2] hover:bg-[#004e92] transition duration-300 rounded-full shadow-md cursor-pointer flex items-center justify-center">
+          <div className="w-10 h-7 bg-[#1976D2] hover:bg-[#004e92] transition duration-300 rounded-full shadow-md cursor-pointer flex items-center justify-center">
             <FiExternalLink className="text-white text-xl" />
           </div>
         </div>
@@ -102,11 +102,10 @@ export default function NewsEvents() {
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto px-2 scrollbar-hide scroll-smooth py-8"
           >
-            <EventCard img={demo} text="Event 1: IEEE Intro" />
-            <EventCard img={demo} text="Event 2: PLC Workshop" />
-            <EventCard img={demo} text="Event 3: IOT Hackathon" />
-            <EventCard img={demo} text="Event 4: Technical Quiz" />
-            <EventCard img={demo} text="Event 5: Seminar Day" />
+            <EventCard img="/event-1.png" text="Challenges in Design and Fabrication of DSM Transistor" />
+            <EventCard img="/event-2.png" text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
+            <EventCard img="/event-3.png" text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
+            <EventCard img="/event-4.png" text="One Day Workshop on Electromagnetics for Engineers" />
           </div>
 
           <button
@@ -122,11 +121,10 @@ export default function NewsEvents() {
 
   const News = () => {
     const newsData = [
-      "Neque porro quisquam est qui dolorem ipsum",
-      "This is some very interesting news",
-      "This is some more, less interesting news",
-      "More news coming your way!",
-      "Link to backend later........",
+      "Challenges in Design and Fabrication of DSM Transistor",
+      "Expert Talk on “The Thrilling Odyssey of Trusted AI",
+      "Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set",
+      "One Day Workshop on Electromagnetics for Engineers",
     ];
 
     return (

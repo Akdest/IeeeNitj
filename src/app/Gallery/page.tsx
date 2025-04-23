@@ -7,17 +7,17 @@ import NavigationBar from "../components/Navigation";
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
 const carouselImages = [
-  "/image1.jpeg",
-  "/image2.jpeg",
-  "/image3.jpeg",
-  "/image4.jpeg",
+  "/event-1.png",
+  "/event-2.png",
+  "/event-3.png",
+  "/event-4.png",
 ];
 
 const gridImages = [
-  "/image1.jpeg",
-  "/image2.jpeg",
-  "/image3.jpeg",
-  "/image4.jpeg",
+  "/event-1.png",
+  "/event-2.png",
+  "/event-3.png",
+  "/event-4.png",
 ];
 
 export default function GalleryPage() {

@@ -35,7 +35,7 @@ export default function NavigationBar({ login = false }) {
             : "bg-transparent border-none"
         }`}
       >
-        <div className="head fixed left-5 flex justify-center items-center w-[180px] h-[59px] rounded-lg font-semibold bg-white text-black p-2 ">
+        <div className="head fixed left-5 top-5 flex w-[180px] h-[59px] rounded-lg font-semibold bg-white text-black p-2">
           <img
             src="/IEEE NITJ Student Branch (1).jpg"
             alt="logo"
@@ -43,7 +43,7 @@ export default function NavigationBar({ login = false }) {
           />
         </div>
         {!hamburger && (
-          <div className="hamBurger fixed right-5 z-50">
+          <div className="hamBurger fixed right-5 z-50 top-5">
             <button
               onClick={() => setHamburger(true)}
               className="bg-[#00367070] rounded-xl flex justify-center items-center"

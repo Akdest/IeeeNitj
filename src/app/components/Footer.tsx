@@ -156,7 +156,7 @@ export default function Footer() {
               Be A IEEEian! <br />
               Shaping Engineering excellence,Empowering Innovators!
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="text-sm flex flex-col gap-5">
               <div className="flex gap-5">
                 <img src="./location.svg" alt="" />
                 <a href="">
