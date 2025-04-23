@@ -145,10 +145,10 @@ export default function Footer() {
         </div>
 
         <div
-          className="footer2 w-full sm:h-[428px] grid grid-rows-3 gap-16 sm:grid-cols-3 lg:gap-16 sm:gap-5 p-10 "
+          className="footer2 w-full sm:h-[428px] grid grid-rows-3 gap-16 sm:grid-cols-3 lg:gap-16 sm:gap-5 p-10 text-white"
           style={{ opacity: "0.65", background: "rgba(1, 12, 38, 0.92)", fontFamily:"Roboto" }}
         >
-          <div className="section1 flex flex-col gap-10">
+          <div className="section1 flex flex-col gap-10 ">
             <div className="font-light text-white text-xl">
               IEEE NITJ STUDENT CHAPTER
             </div>
@@ -156,7 +156,7 @@ export default function Footer() {
               Be A IEEEian! <br />
               Shaping Engineering excellence,Empowering Innovators!
             </div>
-            <div className="text-base flex flex-col gap-5">
+            <div className="flex flex-col gap-5">
               <div className="flex gap-5">
                 <img src="./location.svg" alt="" />
                 <a href="">

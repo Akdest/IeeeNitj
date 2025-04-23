@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+// import { link } from "fs";
 
 export default function NavigationBar({ login = false }) {
   const log = login ? "Log Out" : "Log In";
@@ -26,7 +27,7 @@ export default function NavigationBar({ login = false }) {
   };
 
   return (
-    <div className="relative w-full z-50" style={{ fontFamily: "Michroma" }}>
+    <div className="relative w-full z-[1000]" style={{ fontFamily: "Michroma" }}>
       <div
         className={`navBar p-5 h-[90px] fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
@@ -76,11 +77,11 @@ export default function NavigationBar({ login = false }) {
               { name: "Home", link: "/" },
               { name: "About Us", link: "/AboutUs" },
               { name: "Events", link: "/Event" },
-              { name: "News", subMenu: true },
+              { name: "News", link:"/news"},
               { name: "Gallery", link: "/Gallery" },
-              { name: "Committee", subMenu: true },
+              { name: "Committee", subMenu: false, link:"/Commitee" },
               { name: "Contacts", link: "/Contact" },
-              { name: log, link: "#" },
+
             ].map(({ name, link, subMenu }, idx) => (
               <li key={idx}>
                 {subMenu ? (

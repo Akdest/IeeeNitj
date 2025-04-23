@@ -55,19 +55,15 @@ export default function Events() {
         className="h-screen w-full fixed top-0 -z-50"
       ></div>
 
-      {/* Title */}
       <h1 className="z-50 text-4xl mt-12 font-bold">EVENTS</h1>
 
-      {/* Event List */}
       <div className="flex flex-col items-center justify-center gap-16 p-10 w-full max-w-7xl">
         {dataEvents.map((item) => (
           <div
             key={item.id}
             className="flex md:flex-row flex-col items-center justify-center bg-[#3f4b6715] rounded-tl-[50px] rounded-br-[50px] shadow-md"
           >
-            {/* Image Card */}
             <div className="relative h-fit w-fit rounded-tl-xl md:rounded-bl-xl md:rounded-tr-none rounded-tr-xl">
-              <div className="w-4 h-4 bg-white rounded-full absolute md:top-1/2 md:left-1 left-1/2 top-1 -translate-x-1/2 -translate-y-1/2"></div>
               <CardContainer>
                 <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[25rem] h-auto p-6">
                   <CardItem translateZ="50" className="w-full">
@@ -85,7 +81,6 @@ export default function Events() {
               </CardContainer>
             </div>
 
-            {/* Text Card */}
             <div className="sm:rounded-xl rounded-bl-xl rounded-br-xl bg-[#3f4b6715]">
               <CardContainer>
                 <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] max-w-[40rem] w-fit md:min-h-[25rem] h-fit p-6 flex flex-col justify-center">
