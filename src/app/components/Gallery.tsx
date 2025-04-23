@@ -10,12 +10,10 @@ import image2 from "/public/image2.jpeg";
 import image3 from "/public/image3.jpeg";
 import image4 from "/public/image4.jpeg";
 
-const Montserrat = MontserratFont({ weight: ["400"], subsets: ["latin"] });
+
 const michroma = MichromaFont({ weight: ["400"], subsets: ["latin"] });
 
-const textStyling = {
-  color: "#1F41BB",
-};
+
 
 interface HeadingProps {
   text: string;
