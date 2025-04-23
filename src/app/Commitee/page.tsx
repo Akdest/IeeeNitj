@@ -3,6 +3,9 @@
 
 import Image from "next/image";
 import NavigationBar from "../components/Navigation";
+import { Michroma } from "next/font/google";
+
+const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
 const committeeMembers = [
   {
@@ -36,7 +39,7 @@ export default function CommitteePage() {
   return (
     <>
     <NavigationBar/>
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 px-4">
+    <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 px-4 ${michroma.className}`}>
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           Meet Our Committee

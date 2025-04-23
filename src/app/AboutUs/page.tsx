@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Montserrat as MontserratFont } from "next/font/google";
 import NavigationBar from "../components/Navigation";
+import { Michroma } from "next/font/google";
 
-const Montserrat = MontserratFont({ weight: ["400"], subsets: ["latin"] });
+const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const textStyling = { color: "#1F41BB" };
 
 export default function About() {
@@ -15,7 +15,7 @@ export default function About() {
         {/* Header */}
         <div className="flex justify-center">
           <h2
-            className={`text-4xl sm:text-5xl font-extrabold text-center ${Montserrat.className} text-black`}
+            className={`text-4xl sm:text-5xl font-extrabold text-center ${michroma.className} text-black`}
           >
             ABOUT US
           </h2>
@@ -26,7 +26,7 @@ export default function About() {
           {/* Text */}
           <div className="flex-1">
             <h2
-              className={`text-2xl sm:text-3xl font-bold mb-4 text-black ${Montserrat.className}`}
+              className={`text-2xl sm:text-3xl font-bold mb-4 text-black ${michroma.className}`}
             >
               ABOUT IEEE
             </h2>
@@ -82,7 +82,7 @@ export default function About() {
           {/* Text */}
           <div className="flex-1">
             <h2
-              className={`text-2xl sm:text-3xl font-bold mb-4 text-black ${Montserrat.className}`}
+              className={`text-2xl sm:text-3xl font-bold mb-4 text-black ${michroma.className}`}
             >
               ABOUT NITJ
             </h2>
