@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Montserrat as MontserratFont } from "next/font/google";
 import { Michroma as MichromaFont } from "next/font/google";
 import { StaticImageData } from "next/image";
 
