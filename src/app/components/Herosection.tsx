@@ -31,12 +31,12 @@ const Herosection: React.FC = () => {
     >
       <div className="absolute inset-0 flex justify-center items-center">
         <div className="w-screen h-screen relative overflow-hidden">
-          {/* Fade Images */}
+          {/* Fade Images (z-0) */}
           {images.map((src, index) => (
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                currentIndex === index ? "opacity-100 z-0" : "opacity-0 z-0"
               }`}
               style={{
                 backgroundImage: `url(${src})`,
@@ -46,8 +46,11 @@ const Herosection: React.FC = () => {
             />
           ))}
 
-          {/* Overlay Text Content */}
-          <div className="relative z-20 flex flex-col items-center justify-center h-full p-4">
+          {/* Blackish Overlay between image and text (z-10) */}
+          <div className="absolute inset-0 bg-black/50 z-10" />
+
+          {/* Text Content (z-20) */}
+          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4">
             <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white drop-shadow-lg text-center">
               INSTITUTE OF ELECTRICAL AND
             </h1>
@@ -58,9 +61,6 @@ const Herosection: React.FC = () => {
               STUDENT CHAPTER NIT JALANDHAR
             </h1>
           </div>
-
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
         </div>
       </div>
     </div>

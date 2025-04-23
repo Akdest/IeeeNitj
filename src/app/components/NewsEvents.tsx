@@ -132,7 +132,7 @@ export default function NewsEvents() {
     return (
       <div className="w-full sm:w-[35%] flex flex-col">
         <Heading text="NEWS" />
-        <div className="flex flex-col gap-4 overflow-y-auto max-h-[22rem] pr-2 sm:pr-4 py-8">
+        <div className="flex flex-col gap-4 overflow-y-auto max-h-[22rem] pr-2 sm:pr-4 py-8 scrollbar-thin scrollbar-track-[#DDEEFF] scrollbar-thumb-[#1976D2] hover:scrollbar-thumb-[#004e92] rounded-md">
           {newsData.map((text, i) => (
             <NewsBubble key={i} text={text} />
           ))}
