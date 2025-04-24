@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-// import { link } from "fs";
 
 export default function NavigationBar() {
-  
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -77,7 +75,7 @@ export default function NavigationBar() {
               { name: "Home", link: "/" },
               { name: "About Us", link: "/AboutUs" },
               { name: "Events", link: "/Event" },
-              { name: "News", link:"/News"},
+              { name: "News", link: "/News" },
               { name: "Gallery", link: "/Gallery" },
               {
                 name: "Committee",
@@ -88,7 +86,6 @@ export default function NavigationBar() {
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-
             ].map(({ name, link, subMenu }, idx) => (
               <li key={idx}>
                 {subMenu ? (
@@ -128,19 +125,18 @@ export default function NavigationBar() {
                   : "opacity-0 translate-x-full"
               }`}
             >
-              {[
-                { name: "Secretary", link: "/Commitee" },
-                { name: "Student", link: "/Commitee" },
-              ].map(({ name, link }, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link}
-                    className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              {[{ name: "Secretary", link: "/Commitee" }, { name: "Student", link: "/Commitee" }].map(
+                ({ name, link }, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link}
+                      className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
+                    >
+                      {name}
+                    </a>
+                  </li>
+                )
+              )}
             </div>
             <div
               className={`transition-all duration-500 ease-in-out ${
@@ -149,19 +145,18 @@ export default function NavigationBar() {
                   : "opacity-0 translate-x-full"
               }`}
             >
-              {[
-                { name: "Good News", link: "#" },
-                { name: "Bad News", link: "#" },
-              ].map(({ name, link }, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link}
-                    className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              {[{ name: "Good News", link: "#" }, { name: "Bad News", link: "#" }].map(
+                ({ name, link }, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link}
+                      className="font-normal xl:text-2xl lg:text-lg sm:text-sm hover:text-white"
+                    >
+                      {name}
+                    </a>
+                  </li>
+                )
+              )}
             </div>
           </ul>
         </div>
@@ -172,9 +167,7 @@ export default function NavigationBar() {
             {[
               { name: "Home", link: "/" },
               { name: "Events", link: "/Event" },
-              {
-                name: "News",  link: "/News"
-              },
+              { name: "News", link: "/News" },
               { name: "Gallery", link: "/Gallery" },
               {
                 name: "Committee",
@@ -185,7 +178,6 @@ export default function NavigationBar() {
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-           
             ].map(({ name, link, subMenu, subValues }, idx) => (
               <li key={idx}>
                 {subMenu ? (
