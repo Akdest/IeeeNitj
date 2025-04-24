@@ -90,3 +90,25 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* globals.css */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #EBF7FD, #AFCFF1);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 65, 187, 0.6); /* primary blue */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 65, 187, 0.9);
+}
