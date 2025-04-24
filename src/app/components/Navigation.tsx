@@ -185,7 +185,6 @@ export default function NavigationBar({ login = false }) {
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-              { name: log, link: "#" },
             ].map(({ name, link, subMenu, subValues }, idx) => (
               <li key={idx}>
                 {subMenu ? (
