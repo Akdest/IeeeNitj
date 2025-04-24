@@ -4,47 +4,23 @@ import Image from "next/image";
 import NavigationBar from "../components/Navigation";
 import { Michroma } from "next/font/google";
 import Footer from "../components/Footer";
+import { committeeMembers } from "./Data"; // Adjust path if needed
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
-const committeeMembers = [
-  {
-    name: "Aarav Mehta",
-    role: "President",
-    image: "/members/aarav.jpg",
-   
-    domain: "Core Team",
-  },
-  {
-    name: "Neha Sharma",
-    role: "Vice President",
-    image: "/members/neha.jpg",
-   
-    domain: "Core Team",
-  },
-  {
-    name: "Rohan Patel",
-    role: "Technical Lead",
-    image: "/members/rohan.jpg",
- 
-    domain: "Technical",
-  },
-  {
-    name: "Simran Kaur",
-    role: "Event Coordinator",
-    image: "/members/simran.jpg",
- 
-    domain: "Management",
-  },
-  // Add more members with domains
-];
+type CommitteeMember = {
+  name: string;
+  role: string;
+  domain: string;
+  image: string;
+};
 
 export default function CommitteePage() {
   const groupedMembers = committeeMembers.reduce((acc, member) => {
     if (!acc[member.domain]) acc[member.domain] = [];
     acc[member.domain].push(member);
     return acc;
-  }, {} as Record<string, typeof committeeMembers>);
+  }, {} as Record<string, CommitteeMember[]>);
 
   return (
     <>
@@ -94,7 +70,6 @@ export default function CommitteePage() {
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
                     <p className="text-sm text-indigo-600">{member.role}</p>
-                    
                   </div>
                 ))}
               </div>
