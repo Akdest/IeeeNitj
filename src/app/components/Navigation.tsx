@@ -77,7 +77,7 @@ export default function NavigationBar({ login = false }) {
               { name: "Home", link: "/" },
               { name: "About Us", link: "/AboutUs" },
               { name: "Events", link: "/Event" },
-              { name: "News", link:"/news"},
+              { name: "News", link:"/News"},
               { name: "Gallery", link: "/Gallery" },
               { name: "Committee", subMenu: false, link:"/Commitee" },
               { name: "Contacts", link: "/Contact" },
@@ -167,11 +167,6 @@ export default function NavigationBar({ login = false }) {
               { name: "Events", link: "#" },
               {
                 name: "News",
-                subMenu: true,
-                subValues: [
-                  { nameSub: "Good News", linkSub: "#" },
-                  { nameSub: "Bad News", linkSub: "#" },
-                ],
               },
               { name: "Gallery", link: "#" },
               {

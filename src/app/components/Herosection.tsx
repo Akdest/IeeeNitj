@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { StaticImageData } from "next/image";
 
-const image1 = "/image1.jpeg" as unknown as StaticImageData;
-const image2 = "/image2.jpeg" as unknown as StaticImageData;
-const image3 = "/image3.jpeg" as unknown as StaticImageData;
-const image4 = "/image4.jpeg" as unknown as StaticImageData;
+const image1 = "/event-1.png" as unknown as StaticImageData;
+const image2 = "/event-2.png" as unknown as StaticImageData;
+const image3 = "/event-3.png" as unknown as StaticImageData;
+const image4 = "/event-4.png" as unknown as StaticImageData;
 
 const images: StaticImageData[] = [image1, image2, image3, image4];
 

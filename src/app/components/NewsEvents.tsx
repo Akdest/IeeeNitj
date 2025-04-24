@@ -2,10 +2,13 @@
 
 import React, { useRef } from "react";
 import { Michroma, Montserrat } from "next/font/google";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
+import event1 from "../../../public/event-1.png";
+import event2 from "../../../public/event-2.png";
+import event3 from "../../../public/event-3.png";
+import event4 from "../../../public/event-4.png";
 import { FiExternalLink } from "react-icons/fi";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-// import demo from "../../../public/Demo.png";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const montserrat = Montserrat({ weight: ["400"], subsets: ["latin"] });
@@ -13,9 +16,11 @@ const montserrat = Montserrat({ weight: ["400"], subsets: ["latin"] });
 interface HeadingProps {
   text: string;
 }
+
 interface NewsBubbleProps {
   text: string;
 }
+
 interface EventCardProps {
   text: string;
   img: StaticImageData;
@@ -50,15 +55,16 @@ export default function NewsEvents() {
     <div className="min-w-[250px] sm:min-w-[300px] h-[22rem] bg-white border border-[#1976D2] rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
       {/* Image Section */}
       <div className="h-[65%] relative">
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${img})`,
-          }}
+        <Image
+          src={img}
+          alt={text}
+          layout="fill"
+          objectFit="cover"
+          className="absolute top-0 left-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-[#1976D2BF] opacity-0 hover:opacity-30 transition duration-300" />
       </div>
-  
+
       {/* Content Section */}
       <div className="h-[35%] p-4 flex flex-col justify-between">
         <p className="text-sm sm:text-base font-medium text-[#0C377B] text-center leading-snug line-clamp-3 h-fit">
@@ -72,7 +78,6 @@ export default function NewsEvents() {
       </div>
     </div>
   );
-  
 
   const Events = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -100,12 +105,21 @@ export default function NewsEvents() {
 
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto px-2 scrollbar-hide scroll-smooth py-8"
+            className="flex space-x-4 overflow-x-auto py-4 scrollbar-hide"
+            style={{
+              overflowX: "scroll",
+              scrollbarWidth: "none", // Firefox
+              msOverflowStyle: "none", // Internet Explorer
+            }}
           >
-            <EventCard img="/event-1.png" text="Challenges in Design and Fabrication of DSM Transistor" />
-            <EventCard img="/event-2.png" text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
-            <EventCard img="/event-3.png" text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
-            <EventCard img="/event-4.png" text="One Day Workshop on Electromagnetics for Engineers" />
+            <EventCard img={event1} text="Challenges in Design and Fabrication of DSM Transistor" />
+            <EventCard img={event2} text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
+            <EventCard img={event3} text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
+            <EventCard img={event4} text="One Day Workshop on Electromagnetics for Engineers" />
+            <EventCard img={event1} text="Challenges in Design and Fabrication of DSM Transistor" />
+            <EventCard img={event2} text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
+            <EventCard img={event3} text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
+            <EventCard img={event4} text="One Day Workshop on Electromagnetics for Engineers" />
           </div>
 
           <button

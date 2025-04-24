@@ -1,4 +1,7 @@
 "use client";
+
+import { FaGlobe } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <div className="relative w-full h-screen">
@@ -163,16 +166,17 @@ export default function Footer() {
                   DR BR AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR, PUNJAB
                 </a>
               </div>
-              <div className="flex gap-5">
-                <img src="./mail.svg" alt="" />
-                <a href="mailto:xyz@gmail.com">
-                  xyz@gmail.com
-                </a>
-              </div>
+              <div className="flex gap-5 items-center">
+  <FaGlobe className="text-white w-8 h-8" />
+  <a href="https://www.nitj.ac.in/" className="text-white hover:text-gray-300 transition-colors duration-300">
+    NITJ Website
+  </a>
+</div>
               <div className="flex gap-5">
                 <img src="tel.svg" alt="" />
                 <a href="tel:+91180001235">
-                  +91180001235
+                 
++91-0181-5037855, 2690301, 2690453, 3082000
                 </a>
               </div>
             </div>
@@ -206,20 +210,21 @@ export default function Footer() {
           <div className="section3 flex flex-col gap-10 lg:ml-0 md:ml-14">
             <p className="font-bold text-2xl">QUICK LINKS</p>
             <div className="flex flex-col gap-5">
-              <a href="" className="flex relative w-1/2">
+              <a href="/AboutUs" className="flex relative w-1/2">
                 About Us
                 <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
-              <a href="" className="flex relative w-1/2">
-                Careers
+              <a href="/Event" className="flex relative w-1/2">
+                Events
                 <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
-              <a href="" className="flex relative w-1/2">
-                FAQs
+              <a href="/Gallery" className="flex relative w-1/2">
+                Gallery
                 <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
-              </a>
-              <a href="" className="flex relative w-1/2">
-                Teams
+                </a>
+
+              <a href="/Commitee" className="flex relative w-1/2">
+                Commitee
                 <img src="./arrow.svg" alt="" className="absolute lg:right-0 md:-right-5 -right-16"/>
               </a>
               <a href="" className="flex relative w-1/2">
