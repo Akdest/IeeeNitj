@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-// import { link } from "fs";
 
-export default function NavigationBar({ login = false }) {
-  const log = login ? "Log Out" : "Log In";
+export default function NavigationBar() {
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -77,18 +75,17 @@ export default function NavigationBar({ login = false }) {
               { name: "Home", link: "/" },
               { name: "About Us", link: "/AboutUs" },
               { name: "Events", link: "/Event" },
-              { name: "News", link:"/News"},
+              { name: "News", link: "/News" },
               { name: "Gallery", link: "/Gallery" },
               {
                 name: "Committee",
                 subMenu: true,
                 subValues: [
-                  { nameSub: "Secretary", linkSub: "#" },
-                  { nameSub: "Student", linkSub: "#" },
+                  { nameSub: "Secretary", linkSub: "/Commitee" },
+                  { nameSub: "Student", linkSub: "/Commitee" },
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-
             ].map(({ name, link, subMenu }, idx) => (
               <li key={idx}>
                 {subMenu ? (
@@ -172,9 +169,7 @@ export default function NavigationBar({ login = false }) {
             {[
               { name: "Home", link: "/" },
               { name: "Events", link: "/Event" },
-              {
-                name: "News",  link: "/News"
-              },
+              { name: "News", link: "/News" },
               { name: "Gallery", link: "/Gallery" },
               {
                 name: "Committee",
@@ -185,7 +180,6 @@ export default function NavigationBar({ login = false }) {
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-              { name: log, link: "#" },
             ].map(({ name, link, subMenu, subValues }, idx) => (
               <li key={idx}>
                 {subMenu ? (
