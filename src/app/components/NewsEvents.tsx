@@ -96,41 +96,70 @@ export default function NewsEvents() {
       <div className="w-full sm:w-[65%]">
         <Heading text="UPCOMING EVENTS" />
         <div className="relative">
+          {/* Left Arrow Button */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-[-1rem] top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:scale-110 transition"
+            className="absolute left-[-1rem] top-1/2 -translate-y-1/2 z-10 bg-white/30 p-3 rounded-full shadow-lg backdrop-blur-md hover:scale-110 transition"
           >
             <FaChevronLeft />
           </button>
-
+    
+          {/* Scrollable Event Cards Container */}
           <div
             ref={scrollRef}
-            className="flex space-x-4 overflow-x-auto py-4 scrollbar-hide"
+            className="flex space-x-4 overflow-x-auto py-4 scrollbar-hide "
             style={{
               overflowX: "scroll",
               scrollbarWidth: "none", // Firefox
               msOverflowStyle: "none", // Internet Explorer
             }}
           >
-            <EventCard img={event1} text="Challenges in Design and Fabrication of DSM Transistor" />
-            <EventCard img={event2} text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
-            <EventCard img={event3} text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
-            <EventCard img={event4} text="One Day Workshop on Electromagnetics for Engineers" />
-            <EventCard img={event1} text="Challenges in Design and Fabrication of DSM Transistor" />
-            <EventCard img={event2} text="Expert Talk on “The Thrilling Odyssey of Trusted AI”" />
-            <EventCard img={event3} text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set" />
-            <EventCard img={event4} text="One Day Workshop on Electromagnetics for Engineers" />
+            {/* Event Cards with Glassmorphism */}
+            <EventCard
+              img={event1}
+              text="Challenges in Design and Fabrication of DSM Transistor"
+            />
+            <EventCard
+              img={event2}
+              text="Expert Talk on “The Thrilling Odyssey of Trusted AI”"
+            />
+            <EventCard
+              img={event3}
+              text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set"
+            />
+            <EventCard
+              img={event4}
+              text="One Day Workshop on Electromagnetics for Engineers"
+            />
+            <EventCard
+              img={event1}
+              text="Challenges in Design and Fabrication of DSM Transistor"
+            />
+            <EventCard
+              img={event2}
+              text="Expert Talk on “The Thrilling Odyssey of Trusted AI”"
+            />
+            <EventCard
+              img={event3}
+              text="Expert Talk on “Algorithm-to-circuit design using the AHIR-V2 tool-set"
+            />
+            <EventCard
+              img={event4}
+              text="One Day Workshop on Electromagnetics for Engineers"
+            />
           </div>
-
+    
+          {/* Right Arrow Button */}
           <button
             onClick={() => scroll("right")}
-            className="absolute right-[-1rem] top-1/2 -translate-y-1/2 z-10 bg-gray-50 p-2 rounded-full shadow hover:scale-110 transition"
+            className="absolute right-[-1rem] top-1/2 -translate-y-1/2 z-10 bg-white/30 p-3 rounded-full shadow-lg backdrop-blur-md hover:scale-110 transition"
           >
             <FaChevronRight />
           </button>
         </div>
       </div>
     );
+    
   };
 
   const News = () => {

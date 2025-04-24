@@ -5,7 +5,7 @@ import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 // import { link } from "fs";
 
 export default function NavigationBar({ login = false }) {
-  const log = login ? "Log Out" : "Log In";
+ 
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);

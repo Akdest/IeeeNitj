@@ -38,19 +38,18 @@ export default function GalleryPage() {
         className={`min-h-screen py-24 md:py-10 lg:py-12 px-6 w-full bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
       >
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1
-            className="text-4xl sm:text-5xl font-extrabold text-black"
-            style={{
-              WebkitTextStrokeWidth: 1,
-              WebkitTextStrokeColor: "#8A92DD",
-              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            }}
-          >
-            GALLERY
-          </h1>
-          <p className="text-gray-700 mt-2 text-lg">Moments that matter</p>
-        </div>
+        <div className="flex justify-center pb-10">
+            <h2
+              className={`text-4xl sm:text-5xl font-extrabold text-center ${michroma.className} text-black`}
+              style={{
+                WebkitTextStrokeWidth: 1,
+                WebkitTextStrokeColor: "#8A92DD",
+                textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+              }}
+            >
+              GALLERY
+            </h2>
+          </div>
 
         {/* Auto Carousel */}
         <div className="w-full flex justify-center items-center overflow-hidden mb-20">

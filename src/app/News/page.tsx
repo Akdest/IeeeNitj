@@ -40,7 +40,7 @@ const NewsPage = () => {
   );
 
   const NewsBubble: React.FC<NewsBubbleProps> = ({ text, imgSrc }) => (
-    <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 shadow-lg border border-[#8AB6E8] bg-[#F1F7FF] rounded-xl px-4 py-3 hover:scale-[1.02] transition-transform duration-300 transform">
+    <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 px-4 py-4 rounded-2xl backdrop-blur-md bg-white/30 border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.2)] hover:scale-[1.02] transition-transform duration-300">
       <div className="w-full sm:w-1/3">
         <Image
           src={imgSrc}
@@ -52,12 +52,13 @@ const NewsPage = () => {
         />
       </div>
       <div
-        className={`w-full sm:w-[65%] mt-4 sm:mt-0 px-4 text-sm sm:text-base ${montserrat.className}`}
+        className={`w-full sm:w-[65%] mt-4 sm:mt-0 px-4 text-sm sm:text-base text-black ${montserrat.className}`}
       >
         {text}
       </div>
     </div>
   );
+  
 
   const News = () => {
     const newsData = [

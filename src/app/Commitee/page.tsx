@@ -43,19 +43,18 @@ export default function CommitteePage() {
         className={`min-h-screen py-24 md:py-10 lg:py-12 px-4 bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
       >
         <div className="max-w-6xl mx-auto text-center">
-          <h1
-            className="text-4xl sm:text-5xl font-extrabold text-black mb-4"
-            style={{
-              WebkitTextStrokeWidth: 1,
-              WebkitTextStrokeColor: "#8A92DD",
-              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            }}
-          >
-            MEET OUR COMMITTEE
-          </h1>
-          <p className="text-gray-700 mb-12 text-lg">
-            The dedicated team behind SPICE.
-          </p>
+        <div className="flex justify-center pb-10">
+            <h2
+              className={`text-4xl sm:text-5xl font-extrabold text-center ${michroma.className} text-black`}
+              style={{
+                WebkitTextStrokeWidth: 1,
+                WebkitTextStrokeColor: "#8A92DD",
+                textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+              }}
+            >
+              COMMITTEE
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {committeeMembers.map((member, index) => (
