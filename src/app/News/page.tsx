@@ -9,6 +9,7 @@ import NavigationBar from "../components/Navigation";
 import newsImage1 from "../../../public/event-1.png";
 import newsImage2 from "../../../public/event-2.png";
 import newsImage3 from "../../../public/event-3.png";
+import Footer from "../components/Footer";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const montserrat = Montserrat({ weight: ["400"], subsets: ["latin"] });
@@ -96,9 +97,10 @@ const NewsPage = () => {
   return (
     <>
     <NavigationBar />
-    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-10 py-10 sm:py-12 lg:py-16 bg-gradient-to-tl from-[#DDEEFF] to-[#B8D1F3] overflow-auto">
+    <div className="w-full py-24 md:py-10 lg:py-12 min-h-screen px-4 sm:px-6 lg:px-10 bg-gradient-to-tl from-[#DDEEFF] to-[#B8D1F3] overflow-auto">
       <News />
     </div>
+    <Footer/>
     </>
   );
 };

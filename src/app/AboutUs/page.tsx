@@ -2,6 +2,7 @@
 import React from "react";
 import NavigationBar from "../components/Navigation";
 import { Michroma } from "next/font/google";
+import Footer from "../components/Footer";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 const textStyling = { color: "#1F41BB" };
@@ -10,7 +11,7 @@ export default function About() {
   return (
     <>
       <NavigationBar />
-      <div className="w-full min-h-screen bg-gradient-to-tl from-[#DDEEFF] to-[#B8D1F3] py-10">
+      <div className="w-full min-h-screen py-24 md:py-10 lg:py-12 bg-gradient-to-tl from-[#DDEEFF] to-[#B8D1F3]">
         <div className="w-[90%] max-w-7xl mx-auto flex flex-col gap-20">
           {/* Header */}
           <div className="flex justify-center">
@@ -102,6 +103,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

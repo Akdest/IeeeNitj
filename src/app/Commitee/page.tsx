@@ -1,9 +1,9 @@
-// app/committee/page.tsx or pages/committee.tsx
-"use client"; // Only for app router
+"use client";
 
 import Image from "next/image";
 import NavigationBar from "../components/Navigation";
 import { Michroma } from "next/font/google";
+import Footer from "../components/Footer";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
@@ -38,37 +38,50 @@ const committeeMembers = [
 export default function CommitteePage() {
   return (
     <>
-    <NavigationBar/>
-    <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 px-4 ${michroma.className}`}>
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Meet Our Committee
-        </h1>
-        <p className="text-gray-600 mb-12">
-          The dedicated team behind SPICE.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {committeeMembers.map((member, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 group"
-            >
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+      <NavigationBar />
+      <div
+        className={`min-h-screen py-24 px-4 bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
+      >
+        <div className="max-w-6xl mx-auto text-center">
+          <h1
+            className="text-4xl sm:text-5xl font-extrabold text-black mb-4"
+            style={{
+              WebkitTextStrokeWidth: 1,
+              WebkitTextStrokeColor: "#8A92DD",
+              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            MEET OUR COMMITTEE
+          </h1>
+          <p className="text-gray-700 mb-12 text-lg">
+            The dedicated team behind SPICE.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {committeeMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 group"
+              >
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-indigo-600">{member.role}</p>
+                <p className="mt-2 text-sm text-gray-500">{member.bio}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-              <p className="text-sm text-indigo-600">{member.role}</p>
-              <p className="mt-2 text-sm text-gray-500">{member.bio}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
     </>
   );
 }
