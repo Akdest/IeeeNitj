@@ -40,7 +40,7 @@ export default function CommitteePage() {
     <>
       <NavigationBar />
       <div
-        className={`min-h-screen py-24 px-4 bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
+        className={`min-h-screen py-24 md:py-10 lg:py-12 px-4 bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
       >
         <div className="max-w-6xl mx-auto text-center">
           <h1

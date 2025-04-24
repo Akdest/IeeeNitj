@@ -35,7 +35,7 @@ export default function GalleryPage() {
     <>
       <NavigationBar />
       <div
-        className={`min-h-screen py-24 px-6 w-full bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
+        className={`min-h-screen py-24 md:py-10 lg:py-12 px-6 w-full bg-gradient-to-b from-[#EBF7FD] to-[#AFCFF1] ${michroma.className}`}
       >
         {/* Header */}
         <div className="text-center mb-16">
