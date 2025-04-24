@@ -79,7 +79,14 @@ export default function NavigationBar({ login = false }) {
               { name: "Events", link: "/Event" },
               { name: "News", link:"/News"},
               { name: "Gallery", link: "/Gallery" },
-              { name: "Committee", subMenu: false, link:"/Commitee" },
+              {
+                name: "Committee",
+                subMenu: true,
+                subValues: [
+                  { nameSub: "Secretary", linkSub: "#" },
+                  { nameSub: "Student", linkSub: "#" },
+                ],
+              },
               { name: "Contacts", link: "/Contact" },
 
             ].map(({ name, link, subMenu }, idx) => (
@@ -110,7 +117,7 @@ export default function NavigationBar({ login = false }) {
           </ul>
 
           <ul
-            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] xl:w-72 lg:w-48 sm:w-36 ${
+            className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden p-5 border-l-2 border-[#94C4FB] rounded-xl  xl:w-72 lg:w-48 sm:w-36 ${
               activeSubMenu ? "opacity-100" : "opacity-0"
             } transition-all ease-in-out duration-500`}
           >
@@ -163,22 +170,22 @@ export default function NavigationBar({ login = false }) {
         <div className="sm:hidden h-screen overflow-y-auto overflow-x-hidden">
           <ul className="mainMenu flex flex-col gap-8 text-[#94C4FB] xl:w-96 lg:w-72 sm:w-48 w-96">
             {[
-              { name: "Home", link: "#" },
-              { name: "Events", link: "#" },
+              { name: "Home", link: "/" },
+              { name: "Events", link: "/Event" },
               {
-                name: "News",
+                name: "News",  link: "/News"
               },
-              { name: "Gallery", link: "#" },
+              { name: "Gallery", link: "/Gallery" },
               {
                 name: "Committee",
                 subMenu: true,
                 subValues: [
-                  { nameSub: "Secretary", linkSub: "#" },
-                  { nameSub: "Student", linkSub: "#" },
+                  { nameSub: "Secretary", linkSub: "/Commitee" },
+                  { nameSub: "Student", linkSub: "/Commitee" },
                 ],
               },
-              { name: "Contacts", link: "#" },
-              { name: log, link: "#" },
+              { name: "Contacts", link: "/Contact" },
+             
             ].map(({ name, link, subMenu, subValues }, idx) => (
               <li key={idx}>
                 {subMenu ? (
@@ -194,7 +201,7 @@ export default function NavigationBar({ login = false }) {
                       className="lg:w-5 lg:h-5 mb-1 w-3 h-3"
                     />
                     <ul
-                      className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden border border-[#94C4FB] rounded-xl bg-[#94c4fb2f] xl:w-72 lg:w-48 sm:w-36 w-fit ${
+                      className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden border-l-2 border-[#94C4FB] rounded-xl  xl:w-72 lg:w-48 sm:w-36 w-fit ${
                         activeSubMenu === name
                           ? "h-full p-5 opacity-100 mt-5"
                           : "h-0 p-0 opacity-0 mt-0"
