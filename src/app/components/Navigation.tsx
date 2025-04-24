@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 // import { link } from "fs";
 
-export default function NavigationBar({ login = false }) {
- 
+export default function NavigationBar() {
+  
   const [hamburger, setHamburger] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -185,7 +185,7 @@ export default function NavigationBar({ login = false }) {
                 ],
               },
               { name: "Contacts", link: "/Contact" },
-             
+           
             ].map(({ name, link, subMenu, subValues }, idx) => (
               <li key={idx}>
                 {subMenu ? (
@@ -201,7 +201,7 @@ export default function NavigationBar({ login = false }) {
                       className="lg:w-5 lg:h-5 mb-1 w-3 h-3"
                     />
                     <ul
-                      className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden border-l-2 border-[#94C4FB] rounded-xl  xl:w-72 lg:w-48 sm:w-36 w-fit ${
+                      className={`subMenu flex flex-col gap-8 text-[#94C4FB] overflow-x-hidden border-l-2 border-[#94C4FB] rounded-xl xl:w-72 lg:w-48 sm:w-36 w-fit ${
                         activeSubMenu === name
                           ? "h-full p-5 opacity-100 mt-5"
                           : "h-0 p-0 opacity-0 mt-0"
