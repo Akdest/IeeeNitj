@@ -83,7 +83,7 @@ export default function NavigationBar({ login = false }) {
                 name: "Committee",
                 subMenu: true,
                 subValues: [
-                  { nameSub: "Secretary", linkSub: "#" },
+                  { nameSub: "Faculty", linkSub: "#" },
                   { nameSub: "Student", linkSub: "#" },
                 ],
               },
@@ -129,8 +129,8 @@ export default function NavigationBar({ login = false }) {
               }`}
             >
               {[
-                { name: "Secretary", link: "/Commitee" },
-                { name: "Student", link: "/Commitee" },
+                { name: "FACULTY", link: "/FCommitee" },
+                { name: "STUDENT", link: "/SCommitee" },
               ].map(({ name, link }, idx) => (
                 <li key={idx}>
                   <a
@@ -180,8 +180,8 @@ export default function NavigationBar({ login = false }) {
                 name: "Committee",
                 subMenu: true,
                 subValues: [
-                  { nameSub: "Secretary", linkSub: "/Commitee" },
-                  { nameSub: "Student", linkSub: "/Commitee" },
+                  { nameSub: "FACULTY", linkSub: "/FCommitee" },
+                  { nameSub: "STUDENT", linkSub: "/SCommitee" },
                 ],
               },
               { name: "Contacts", link: "/Contact" },
