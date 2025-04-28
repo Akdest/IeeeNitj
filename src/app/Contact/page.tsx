@@ -64,7 +64,7 @@ export default function Contact() {
             {
               icon: faPeopleGroup,
               title: "Team IEEE",
-              href: "/Commitee",
+              href: "/SCommitee",
             },
             {
               icon: faPhone,
