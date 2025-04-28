@@ -43,6 +43,18 @@ export type CommitteeMember = {
       image: "/vyomika.jpg",
       domain: "SECRETARY",
     },
+    {
+      name: "Apara Aggarwal",
+      role: "Joint Secretary",
+      image: "/Apara.jpg",
+      domain: "SECRETARY",
+    },
+    {
+      name: "Anupam",
+      role: "Joint Secretary",
+      image: "/Anupam.jpg",
+      domain: "SECRETARY",
+    },
 
     //technical head
     {
@@ -99,18 +111,7 @@ export type CommitteeMember = {
       domain: "TREASURER",
     },
    
-    {
-      name: "Apara Aggarwal",
-      role: "Joint Secretary",
-      image: "/Apara.jpg",
-      domain: "SECRETARY",
-    },
-    {
-      name: "Anupam",
-      role: "Joint Secretary",
-      image: "/Anupam.jpg",
-      domain: "SECRETARY",
-    },
+    
    
     
       // Add more members here
