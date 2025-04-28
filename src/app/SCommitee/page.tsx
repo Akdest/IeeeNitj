@@ -4,7 +4,7 @@ import Image from "next/image";
 import NavigationBar from "../components/Navigation";
 import { Michroma } from "next/font/google";
 import Footer from "../components/Footer";
-import { committeeMembers } from "./Data"; 
+import { committeeMembers } from "./Data";
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 
@@ -58,7 +58,7 @@ export default function CommitteePage() {
                 {members.map((member, index) => (
                   <div
                     key={index}
-                    className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl py-12 transition duration-300 group"
+                    className="backdrop-blur-xl bg-white/20 border border-white/30 p-6 rounded-2xl shadow-xl hover:shadow-2xl py-12 transition duration-300 group"
                   >
                     <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
                       <Image
