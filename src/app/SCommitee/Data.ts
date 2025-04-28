@@ -10,98 +10,108 @@ export type CommitteeMember = {
       name: "Parth Arora",
       role: "Chairperson",
       image: "/Parth.jpg",
-      domain: "Core Team",
+      domain: "CHAIRPERSON",
     },
     {
       name: "Anshu Yadav",
       role: "Chairperson",
       image: "/Anshu.jpg",
-      domain: "Core Team",
+      domain: "CHAIRPERSON",
     },
     {
       name: "Vaidehi",
       role: "Vice Chairperson",
       image: "/Vaidehi.jpg",
-      domain: "Core Team",
+      domain: "CHAIRPERSON",
     },
     {
       name: "Ayush Singla",
       role: "Vice Chairperson",
       image: "/Ayush_2nd_year.jpg",
-      domain: "Technical",
+      domain: "CHAIRPERSON",
     },
+  //secretary
     {
       name: "Parshant Garg",
       role: "Secretary",
       image: "/Parshant.jpg",
-      domain: "Management",
+      domain: "SECRETARY",
     },
     {
       name: "Vyomika",
       role: "Secretary",
       image: "/vyomika.jpg",
-      domain: "Management",
+      domain: "SECRETARY",
     },
-    {
-      name: "Bhavya",
-      role: "Treasurer",
-      image: "/Bhavya.jpg",
-      domain: "Management",
-    },
-    {
-      name: "Shivam Singla",
-      role: "Treasurer",
-      image: "/Shivam.jpg",
-      domain: "Management",
-    },
-    {
-      name: "Ayush Kumar",
-      role: "Web Master",
-      image: "/Ayush_3rd_year.jpg",
-      domain: "Management",
-    },
-    {
-      name: "Jasmine Kaur",
-      role: "Web Master",
-      image: "/jasmine.jpg",
-      domain: "Management",
-    },
+
+    //technical head
     {
       name: "Gurpahul Singh",
       role: "Technical Head",
       image: "/Gurpahul.jpg",
-      domain: "Management",
+      domain: "TECHNICAL HEAD",
     },
     {
       name: "Rachit Goyal",
       role: "Technical Head",
       image: "/Rachit.jpg",
-      domain: "Management",
+      domain: "TECHNICAL HEAD",
+    },
+
+    //webmaster
+    {
+      name: "Ayush Kumar",
+      role: "Web Master",
+      image: "/Ayush_3rd_year.jpg",
+      domain: "WEB MASTER",
     },
     {
-      name: "Apara Aggarwal",
-      role: "Joint Secretary",
-      image: "/Apara.jpg",
-      domain: "Management",
+      name: "Jasmine Kaur",
+      role: "Web Master",
+      image: "/jasmine.jpg",
+      domain: "WEB MASTER",
+    },
+
+    //treasurer
+    {
+      name: "Bhavya",
+      role: "Treasurer",
+      image: "/Bhavya.jpg",
+      domain: "TREASURER",
     },
     {
-      name: "Anupam",
-      role: "Joint Secretary",
-      image: "/Anupam.jpg",
-      domain: "Management",
+      name: "Shivam Singla",
+      role: "Treasurer",
+      image: "/Shivam.jpg",
+      domain: "TREASURER",
+    },
+    
+    {
+      name: "Varun",
+      role: "Joint Treasurer",
+      image: "/Varun.jpg",
+      domain: "TREASURER",
     },
     {
       name: "Jagjit Singh",
       role: "Joint Treasurer",
       image: "/Jagjit.jpg",
-      domain: "Management",
+      domain: "TREASURER",
+    },
+   
+    {
+      name: "Apara Aggarwal",
+      role: "Joint Secretary",
+      image: "/Apara.jpg",
+      domain: "SECRETARY",
     },
     {
-      name: "Varun",
-      role: "Joint Treasurer",
-      image: "/Varun.jpg",
-      domain: "Management",
+      name: "Anupam",
+      role: "Joint Secretary",
+      image: "/Anupam.jpg",
+      domain: "SECRETARY",
     },
-    // Add more members here
-  ];
-  
+   
+    
+      // Add more members here
+    ];
