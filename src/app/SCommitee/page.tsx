@@ -4,7 +4,7 @@ import Image from "next/image";
 import NavigationBar from "../components/Navigation";
 import { Michroma } from "next/font/google";
 import Footer from "../components/Footer";
-import { committeeMembers } from "./Data"; // Adjust path if needed
+import { committeeMembers } from "./Data"; 
 
 const michroma = Michroma({ weight: ["400"], subsets: ["latin"] });
 

@@ -21,7 +21,7 @@ export type CommitteeMember = {
     {
       name: "Vaidehi",
       role: "Vice Chairperson",
-      image: "Vaidehi.jpg",
+      image: "/Vaidehi.jpg",
       domain: "Core Team",
     },
     {
